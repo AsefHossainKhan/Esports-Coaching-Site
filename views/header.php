@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>home Demo</title>
-	 <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
+	 <link rel="stylesheet" href="../assets/header.css">
 	<header id = "mainHeader">
 		<div class = "container">
 			<h1>e-Coach</h1>
@@ -22,7 +16,3 @@
 			</ul>
 		</div>
 	</nav>
-
-</body>
-</html>
-	
