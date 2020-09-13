@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3fb3f86d64.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/css/registration.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Create Account</h2>
+        </div>
+        <form class="form" id="form" >
+            <div class="form-control">
+                <label>Username</label>
+                <input type="text" placeholder="username" id="username" onkeyup="usernameCheck()">
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error Message</small>
+            </div>
+
+            <div class="form-control">
+                <label>Full Name</label>
+                <input type="text" placeholder="name" id="name" onkeyup="nameCheck()">
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error Message</small>
+            </div>
+
+            <div class="form-control">
+                <label>Email</label>
+                <input type="email" placeholder="email" id="email" onkeyup="emailCheck()">
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error Message</small>
+            </div>
+
+            <div class="form-control">
+                <label>Password</label>
+                <input type="password" placeholder="Password" id="password" onkeyup="passwordCheck()">
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error Message</small>
+            </div>
+
+            <div class="form-control">
+                <label>Confirm Password</label>
+                <input type="password" placeholder="Retype Password" id="password2" onkeyup="password2Check()">
+                <i class="fas fa-exclamation-circle"></i>
+                <i class="fas fa-check-circle"></i>
+                <small>Error Message</small>
+            </div>
+            <input type="button" value="Submit" onclick="submits()" id="button">
+        </form>
+    </div>
+    <script src="../assets/js/registration.js"></script>
+
+</body>
+
+</html>
