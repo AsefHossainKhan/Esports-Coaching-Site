@@ -4,11 +4,12 @@ const name = document.getElementById('name');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
+const usertype = document.getElementById('comboBox');
 
 
 
 function submits() {
-  if (usernameCheck() && nameCheck() && emailCheck() && passwordCheck() && password2Check()) {
+  if (usernameCheck() && nameCheck() && emailCheck() && passwordCheck() && password2Check() && userTypeCheck()) {
     alert('User successfully registered');
   }
   else {
@@ -34,7 +35,6 @@ function nameCheck() {
   const nameValue = name.value.trim();
   setSuccessFor(name);
   return true;
-
 }
 
 function emailCheck() {
@@ -84,6 +84,9 @@ function password2Check() {
 
 }
 
+function userTypeCheck() {
+  return true;
+}
 
 function setErrorFor(input, message) {
   const formControl = input.parentElement; //.form-control

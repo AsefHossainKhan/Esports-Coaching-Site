@@ -17,7 +17,7 @@
         <form class="form" id="form" >
             <div class="form-control">
                 <label>Username</label>
-                <input type="text" placeholder="username" id="username" onkeyup="usernameCheck()">
+                <input type="text" placeholder="Username" id="username" onkeyup="usernameCheck()">
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
                 <small>Error Message</small>
@@ -25,7 +25,7 @@
 
             <div class="form-control">
                 <label>Full Name</label>
-                <input type="text" placeholder="name" id="name" onkeyup="nameCheck()">
+                <input type="text" placeholder="Name" id="name" onkeyup="nameCheck()">
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
                 <small>Error Message</small>
@@ -33,7 +33,7 @@
 
             <div class="form-control">
                 <label>Email</label>
-                <input type="email" placeholder="email" id="email" onkeyup="emailCheck()">
+                <input type="email" placeholder="Email" id="email" onkeyup="emailCheck()">
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
                 <small>Error Message</small>
@@ -53,6 +53,14 @@
                 <i class="fas fa-exclamation-circle"></i>
                 <i class="fas fa-check-circle"></i>
                 <small>Error Message</small>
+            </div>
+
+            <div class="form-control">
+                <label>User Type</label>
+                <select name="comboBox" id="comboBox">
+                    <option value="Student">Student</option>
+                    <option value="Coach">Coach</option>
+                </select>
             </div>
             <input type="button" value="Submit" onclick="submits()" id="button">
         </form>
