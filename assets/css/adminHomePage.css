@@ -1,0 +1,23 @@
+body{
+    background: rgba(77, 129, 95, 0.253);
+}
+
+nav a{
+    display: block;
+    background-color: #85c08a66;
+	width:10%;
+	height: 30px;
+	text-align: center;
+	margin: 10px 5px;	
+	padding-top: 7px;
+    padding-bottom: 9px;
+    padding-left: 5px;
+    padding-right: 5px;
+	border-radius: 5px;	
+	text-decoration: none;
+    color: black;
+}
+
+nav a:hover{
+    background-color: rgb(122, 175, 138);
+}
