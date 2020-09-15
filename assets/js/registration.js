@@ -9,8 +9,29 @@ const usertype = document.getElementById('comboBox');
 
 
 function submits() {
-  if (usernameCheck() && nameCheck() && emailCheck() && passwordCheck() && password2Check() && userTypeCheck()) {
-    alert('User successfully registered');
+  if (usernameCheck() && nameCheck() && emailCheck() && passwordCheck() && password2Check() && usertypeCheck()) {
+    var userData = {
+      'username' : usernameCheck(),
+      'name' : nameCheck(),
+      'email' : emailCheck(),
+      'password' : passwordCheck(),
+      'usertype' : usertypeCheck()
+    };
+
+    userData = JSON.stringify(userData);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open('POST', '../controllers/registrationController.php', true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.responseType = "json";
+    xhttp.send('json='+userData);
+
+    xhttp.onreadystatechange = function(){
+      if(this.readyState == 4 && this.status == 200){
+        alert(this.response.status);
+      }
+    }
+
   }
   else {
     alert('User registration failed');
@@ -21,20 +42,44 @@ function usernameCheck() {
   const usernameValue = username.value.trim();
 
   if(usernameValue === '') {
-    // add error class
     setErrorFor(username, 'Username cannot be blank');
     return false;
   } else {
-    // add success class
-    setSuccessFor(username);
-    return true;
+    var xhttp = new XMLHttpRequest();
+    xhttp.open('POST', '../controllers/registrationUsernameController.php', true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.send('username='+usernameValue);
+
+    xhttp.onreadystatechange = function(){
+      if(this.readyState == 4 && this.status == 200){
+        if (this.responseText == "unique") {
+          setSuccessFor(username);
+          return usernameValue;
+        }
+        else if (this.responseText == "not unique") {
+          setErrorFor(username, "Username is not unique");
+          return false;
+        }
+        else {
+          setErrorFor(username, this.responseText);
+          return false;
+        }
+      }
+    }
+
   }
 }
 
 function nameCheck() {
   const nameValue = name.value.trim();
-  setSuccessFor(name);
-  return true;
+  if (nameValue === '') {
+    setErrorFor(name, 'Name Cannot Be Empty');
+  }
+  else {
+    setSuccessFor(name);
+    return nameValue;
+  }
+
 }
 
 function emailCheck() {
@@ -42,10 +87,33 @@ function emailCheck() {
   if (emailValue === '') {
     setErrorFor(email, 'Email cannot be blank');
     return false;
+  } 
+  else if (!emailValue.includes('@') || !emailValue.includes('.com') || emailValue.lastIndexOf('@') > emailValue.lastIndexOf('.com')) {
+    setErrorFor(email, 'Email is not a valid email');
+    return false;
+  }
+  else {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open('POST', '../controllers/registrationEmailController.php', true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.send('email='+emailValue);
 
-  } else {
-    setSuccessFor(email);
-    return true;
+    xhttp.onreadystatechange = function(){
+      if(this.readyState == 4 && this.status == 200){
+        if (this.responseText == "unique") {
+          setSuccessFor(email);
+          return emailValue;
+        }
+        else if (this.responseText == "not unique") {
+          setErrorFor(email, "Email is not unique");
+          return false;
+        }
+        else {
+          setErrorFor(email, this.responseText);
+          return false;
+        }
+      }
+    }
   }
 }
 
@@ -61,7 +129,7 @@ function passwordCheck() {
   }
   else {
     setSuccessFor(password);
-    return true;
+    return passwordValue;
   }
 
 }
@@ -84,8 +152,9 @@ function password2Check() {
 
 }
 
-function userTypeCheck() {
-  return true;
+function usertypeCheck() {
+  const usertypeValue = usertype.value.trim();
+  return usertypeValue;
 }
 
 function setErrorFor(input, message) {
