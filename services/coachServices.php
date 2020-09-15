@@ -1,9 +1,9 @@
 <?php
   require_once("../db/db.php");
 
-  function registerStudent($username, $name, $email, $password) {
+  function registerCoach($username, $name, $email, $password) {
     $connection = dbConnection();
-    $sql = "INSERT INTO users VALUES ('','$username', '$name', '$email', 'Student')";
+    $sql = "INSERT INTO users VALUES ('','$username', '$name', '$email', 'Coach')";
     try {
       mysqli_query($connection, $sql);
       return "success";
