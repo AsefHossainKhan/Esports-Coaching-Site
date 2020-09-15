@@ -1,18 +1,17 @@
 
-	 <link rel="stylesheet" href="../assets/header.css">
-	<header id = "mainHeader">
-		<div class = "container">
-			<h1>e-Coach</h1>
-		</div>
-	</header>
-
-	<nav id = "mainNav">
-		<div class = "container">
-			<ul>
-				<li> <a href="#">Home</li>
-				<li> <a href="#">Sign in</li>
-				<li> <a href="#">Log in</li>
-				<li> <a href="#">Log out</li>
-			</ul>
-		</div>
-	</nav>
+<link rel="stylesheet" href="../assets/css/header.css">
+<header>
+  <div class="container">
+    <div id="branding">
+      <h1><span class="highlight">E-Sport Coaching</h1>
+    </div>
+    <nav>
+      <ul>
+      	<li> <a href="#">Home</a></li>
+    		<li> <a href="#">Sign in</a></li>
+    		<li> <a href="#">Log in</a></li>
+    		<li> <a href="#">Log out</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

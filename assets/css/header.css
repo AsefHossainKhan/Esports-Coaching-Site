@@ -1,113 +1,69 @@
-body {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	line-height: 1.6em;
-	margin: 0;
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+body{
+  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  padding:0;
+  margin:0;
+  background-color:#f4f4f4;
 }
 
-.container {
-	width : 80%;
-	margin: auto;
-	overflow: hidden;
+.container{
+  width:80%;
+  margin:auto;
+  overflow:hidden;
 }
 
-#mainHeader {
-	font-family: Arial, Helvetica, sans-serif;
-	
-	margin: 0;
-	background: #2657c1;
-	color  :  white;
-	padding: 10px;
-	font-size: 20px;
-	text-align: center;
-	
+header ul{
+  margin:0;
+  padding:0;
 }
 
-#mainNav {
-	height: 40px;
-	background: #0099ff;
-	color : #daeaf6;
-	position: sticky;
-	top: 0;
-}
-#mainNav ul {
-	padding : 0;
-	margin: 0;
-	list-style: none;
-	text-align: right;
-	
+/* Header **/
+header{
+  background:#35424a;
+  color:#ffffff;
+  padding-top:30px;
+  min-height:70px;
+  position: sticky;
+  top: 0;
+  border-bottom:#e8491d 3px solid;
 }
 
-#mainNav li {
-	display: inline-block;
-	margin-left: 30px;
-	padding-top: 7px;
-	position: relative;
-	
+header a{
+  color:#ffffff;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:16px;
 }
 
-#mainNav li :hover {
-	
-	color: #f7f7f7;
-	border-radius: 5px;
+header li{
+  float:left;
+  display:inline;
+  padding: 0 20px 0 20px;
 }
 
-#mainNav a {
-	color : white;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 18px;
+header #branding{
+  float:left;
 }
 
-#mainNav a::before {
-	content: '';
-	display: block;
-	height: 3px;
-	border-radius:1px;
-	background: #f7f7f7;
-
-	position: absolute;
-	top : 0;
-	width: 0%;
-	transition: all ease-in-out 250ms;
+header #branding h1{
+  margin:0;
 }
 
-#mainNav a:hover::before{
-	width: 100%;
+header nav{
+  float:right;
+  margin-top:10px;
+  top: 0;
 }
 
-#mainfooter {
-
-	font-family: Arial, Helvetica, sans-serif;
-	margin: 0;
-
-	background: #0d8abc;
-	color  :  white;
-	padding: 10px;
-	font-size: 30px;
-	text-align: center;
+header .highlight, header .current a{
+  color:#e8491d;
+  font-weight:bold;
 }
 
-#mainFooter ul {
-	padding : 0;
-	margin: 0;
-	list-style: none;
-	text-align: right;
-	
+header a:hover{
+  color:#cccccc;
+  font-weight:bold;
 }
 
-#mainNFooter li {
-	display: inline-block;
-	margin-left: 30px;
-	padding-top: 7px;
-	position: relative;
-	
-}
-
-#mainFooter a {
-	text-decoration: none;
-	float: right;
-	padding: 5px ;
-	border-radius: 100%
-	background-color :red;
-}
