@@ -54,20 +54,20 @@ function usernameCheck() {
       if(this.readyState == 4 && this.status == 200){
         if (this.responseText == "unique") {
           setSuccessFor(username);
-          return usernameValue;
         }
         else if (this.responseText == "not unique") {
           setErrorFor(username, "Username is not unique");
-          return false;
+          usernameValue = false;
         }
         else {
           setErrorFor(username, this.responseText);
-          return false;
+          usernameValue = false;
         }
       }
     }
-
+    return usernameValue;
   }
+
 }
 
 function nameCheck() {
@@ -102,18 +102,18 @@ function emailCheck() {
       if(this.readyState == 4 && this.status == 200){
         if (this.responseText == "unique") {
           setSuccessFor(email);
-          return emailValue;
         }
         else if (this.responseText == "not unique") {
           setErrorFor(email, "Email is not unique");
-          return false;
+          emailValue = false;
         }
         else {
           setErrorFor(email, this.responseText);
-          return false;
+          emailValue = false;
         }
       }
     }
+    return emailValue;
   }
 }
 

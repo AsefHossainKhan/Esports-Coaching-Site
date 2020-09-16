@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #5c5c5c;
+  font-family: 'Open Sans', sans-serif;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0
+}
+
+.edit-profile {
+  /* edit out the min height if necessary */
+  min-height: 60vh; 
+  background-color: white;
+  border-radius: 3px;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+
+}
+
+.edit-profile h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-profile table {
+  width: 100%;
+}
+
+.edit-profile td {
+  width: auto;
+}
+
+.edit-profile table td input{
+  width: 100%;
+}
+
+.edit-profile table td textarea{
+  width: 100%;
+}
