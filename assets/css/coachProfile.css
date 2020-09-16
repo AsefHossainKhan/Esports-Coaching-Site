@@ -8,12 +8,12 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  margin: 0
+  margin: 0;
 }
 
 .firstRow {
   position: relative;
-  height: 300px;
+  min-height: 300px;
 }
 
 .profile-name {
@@ -74,7 +74,7 @@ body {
 
 .secondRow {
   position: relative;
-  height: 400px;
+  min-height: 400px;
 }
 
 .achievements {
@@ -102,7 +102,7 @@ body {
 
 .thirdRow {
   position: relative;
-  height: 300px;
+  min-height: 300px;
 }
 
 .about {
@@ -117,7 +117,7 @@ body {
 
 .fourthRow {
   position: relative;
-  height: 300px;
+  min-height: 300px;
 }
 
 .featuredReview {
@@ -132,7 +132,7 @@ body {
 
 .fifthRow {
   position: relative;
-  height: 300px;
+  min-height: 300px;
 }
 
 .reviews {

@@ -36,4 +36,30 @@
     }
 
   }
+
+  function validateUser($username,$password) {
+    $connection = dbConnection();
+    $sql = "SELECT userId FROM users WHERE userName='$username'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      if ($row = mysqli_fetch_assoc($result)) {
+        $userId = $row['userId'];
+        $sql2 = "SELECT password FROM login WHERE userId='$userId'";
+        $result2 = mysqli_query($connection, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+        if ($row2['password'] == $password) {
+          return "success";
+        }
+        else {
+          return "username and password don't match";
+        }
+      }
+      else {
+        return "this username does nottttttttt exist";
+      }
+    } catch (Exception $e) {
+      return $e;
+    }
+
+  }
 ?>
