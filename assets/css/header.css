@@ -28,6 +28,7 @@ header{
   position: sticky;
   top: 0;
   border-bottom:#e8491d 3px solid;
+  z-index: 1;
 }
 
 header a{
