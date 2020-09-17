@@ -4,10 +4,19 @@ body{
     font-size: 13px;
 }
 
+body h1{
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    z-index: -1;
+}
+
 .left{
     position: absolute; 
-    width: 13%;
-    height: 500px;
+    left : 10px;
+    top : 60px;
+    width: 200px;
+    height: 623px;
     background-color: rgba(137, 190, 139, 0.425);
 }
 
