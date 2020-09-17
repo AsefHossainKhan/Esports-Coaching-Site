@@ -19,4 +19,17 @@
     }
   }
 
+  function insertCoach($userId, $phone, $ign, $discord, $steam, $mmr, $primaryRole, $achievements, $timetable, $aboutMe, $securityQuestion, $answer) {
+    $connection = dbConnection();
+    $sql = "INSERT INTO coaches VALUES ('','$userId', '$phone', '$ign', '$discord', '$steam', '$mmr', '$primaryRole', '0', '$achievements', '$timetable', '$aboutMe', '../res/default.jpg', 'true', 'false')";
+    $sql2 = "UPDATE login SET question='$securityQuestion', answer='$answer' WHERE userId='$userId'";
+    try {
+      mysqli_query($connection, $sql);
+      mysqli_query($connection, $sql2);
+      return "success";
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
 ?>
