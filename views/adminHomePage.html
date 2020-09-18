@@ -6,6 +6,7 @@
     <title>Admin Home</title>
     <!-- <link rel="stylesheet" href="../assets/css/header.css"> -->
     <link rel="stylesheet" href="../assets/css/adminHomePage.css">
+    <script src="../assets/js/addAdmin.js"></script>
 </head>
 
 <!-- <link rel="stylesheet" href="../assets/css/header.css"> -->
@@ -22,16 +23,28 @@
 <body>
     <div class ="left">
         <nav>
-            <a href="#">View Users</a>
-            <a href="#">Add Admin</a>
+            <a href="#" onclick="addAdminVisible()">Add Admin</a>
             <a href="#">Pending Approval's</a>
             <a href="#">Refund Purchase</a>
             <a href="#">Payment Informations</a>
             <a href="#">Manage Coaches</a>
             <a href="#">Manage Students</a>
             <a href="#">Manage Admins</a>
+            <a href="#">Settings</a>
+            <a href="#">Logout</a> 
         </nav>
     </div>
     <h1>Welcome Admin</h1>
+    <div class="right" id="right">
+      <form class="addAdminForm" style="visibility: hidden" id="addAdminForm">
+        Username : <input type="text" id="username"><br><br>
+        Name :     <input type="text" id="name"><br><br>
+        Email :    <input type="text" id="email"><br><br>
+        Password : <input type="text" id="password"><br><br>
+        Confirm Password : <input type="text" id="confirmPassword"><br><br>
+        <input type="button" value="Submit" onclick="addAdmin()"><br><br>
+        <div id = "error"> </div>
+      </form>
+    </div>
 </body>
 </html>

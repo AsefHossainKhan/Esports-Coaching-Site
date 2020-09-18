@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #5c5c5c;
+  font-family: 'Open Sans', sans-serif;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.firstRow {
+  position: relative;
+  min-height: 300px;
+}
+
+.profile-name {
+  background-color: #eb8500;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 60%;
+  overflow: hidden;
+  margin-top: 20px;
+  position: absolute;
+  right: 40%;
+  
+}
+
+#profile-avatar {
+  position: relative;
+  margin: 20px;
+  border-radius: 100px;
+  display: inline;
+  width: 200px;
+  height: 200px;
+}
+
+#profile-name {
+  display: inline-block;
+  position: relative;
+  bottom: 100px;
+  left: 40px;
+}
+
+.packages {
+  background-color: #eb8500;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 25%;
+  overflow: hidden;
+  margin-top: 20px;
+  position: absolute;
+  left: 75%;
+}
+
+.packages h1{
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.individual-package p{
+  margin: 10px 10px;
+  border-radius: 5px;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondRow {
+  position: relative;
+  min-height: 400px;
+}
+
+.achievements {
+  background-color: #eb8500;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 60%;
+  overflow: hidden;
+  margin-top: 20px;
+  position: absolute;
+  right: 40%;
+
+}
+
+.availability {
+  background-color: #eb8500;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 25%;
+  overflow: hidden;
+  margin-top: 20px;
+  position: absolute;
+  left: 75%
+}
+
+.thirdRow {
+  position: relative;
+  min-height: 300px;
+}
+
+.about {
+  background-color: #eb8500;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+  position: absolute;
+}
+
+.fourthRow {
+  position: relative;
+  min-height: 300px;
+}
+
+.featuredReview {
+  background-color: #eb8500;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+  position: absolute;
+}
+
+.fifthRow {
+  position: relative;
+  min-height: 300px;
+}
+
+.reviews {
+  background-color: #eb8500;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+  position: absolute;
+}

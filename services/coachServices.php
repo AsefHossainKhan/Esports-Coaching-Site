@@ -1,0 +1,35 @@
+<?php
+  require_once("../db/db.php");
+
+  function registerCoach($username, $name, $email, $password) {
+    $connection = dbConnection();
+    $sql = "INSERT INTO users VALUES ('','$username', '$name', '$email', 'Coach')";
+
+    try {
+      mysqli_query($connection, $sql);
+      $sql2 = "SELECT userId FROM users WHERE userName='$username'";
+      $result = mysqli_query($connection, $sql2);
+      $row = mysqli_fetch_assoc($result);
+      $userId = $row['userId'];
+      $sql3 = "INSERT INTO login VALUES ('','$userId','$password','','')";
+      mysqli_query($connection, $sql3);
+      return "success";
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function insertCoach($userId, $phone, $ign, $discord, $steam, $mmr, $primaryRole, $achievements, $timetable, $aboutMe, $securityQuestion, $answer) {
+    $connection = dbConnection();
+    $sql = "INSERT INTO coaches VALUES ('','$userId', '$phone', '$ign', '$discord', '$steam', '$mmr', '$primaryRole', '0', '$achievements', '$timetable', '$aboutMe', '../res/default.jpg', 'true', 'false')";
+    $sql2 = "UPDATE login SET question='$securityQuestion', answer='$answer' WHERE userId='$userId'";
+    try {
+      mysqli_query($connection, $sql);
+      mysqli_query($connection, $sql2);
+      return "success";
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+?>
