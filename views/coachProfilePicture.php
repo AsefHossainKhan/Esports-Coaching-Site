@@ -29,12 +29,14 @@
     
   <div class="container">
     <div class="profilePicture">
-      <h3>Change Profile Picture</h3>
-      <input type="file" name="" id="">
-      <button>Change Profile Picutre</button>
+      <form action="../controllers/coachProfilePictureController.php" method="post" id="form" enctype="multipart/form-data">
+        <h3>Change Profile Picture</h3>
+        <input type="file" name="profilePicture" id="profilePicture" accept=".jpg, .jpeg, .png">
+        <input type="hidden" name="userId" value="9">
+        <input type="submit" id="submitButton" value="Change Profile Picture" name="submitButton">
+      </form>
     </div>
   </div>
-    
     
   <footer>
     <div class = "container">
@@ -63,5 +65,7 @@
         </ul>
     </div>
   </footer>
+
+  <script src="../assets/js/coachProfilePicture.js"></script>
   </body>
 </html>

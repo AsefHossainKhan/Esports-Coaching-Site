@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../assets/css/coachPackages.css">
   <title>Document</title>
 </head>
-<body>
+<body onload="currentPackages()">
   
   <header>
     <div class="container">
@@ -29,35 +29,18 @@
     
   <div class="container">
     <div class="packages">
+      <input type="hidden" name="" id="userId" value="9">
       <h3>Package Name</h3>
-      <input type="text"> <br>
+      <input type="text" id="packageName"> <br>
       <h3>Package Price</h3>
-      <input type="text"> <br>
+      <input type="text" id="packagePrice"> <br>
       <h3>Package Duration</h3>
-      <input type="text"> <br>
-      <button>Add Package</button>
+      <input type="text" id="packageDuration"> <br>
+      <button onclick="addPackage()">Add Package</button>
       <br>
       <h1>Current packages</h1>
-      <table>
-        <tr>
-          <td>Package Name</td>
-          <td>Package Price</td>
-          <td>Package Duration</td>
-          <td>Option</td>
-        </tr>
-        <tr>
-          <td>Hourly</td>
-          <td>10 taka</td>
-          <td>1 hour</td>
-          <td>Delete</td>
-        </tr>
-        <tr>
-          <td>Monthly</td>
-          <td>100 taka</td>
-          <td>16 hours</td>
-          <td>Delete</td>
-        </tr>
-      </table>
+      <p id="rowData">
+      </p>
     </div>
   </div>
     
@@ -89,5 +72,8 @@
         </ul>
     </div>
   </footer>
+
+  <script src="../assets/js/coachPackages.js"></script>
+
   </body>
 </html>

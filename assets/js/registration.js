@@ -11,6 +11,7 @@ const usertype = document.getElementById('comboBox');
 function submits() {
   if (usernameCheck() && nameCheck() && emailCheck() && passwordCheck() && password2Check() && usertypeCheck()) {
     var userData = {
+      'functionName' : "submits",
       'username' : usernameCheck(),
       'name' : nameCheck(),
       'email' : emailCheck(),
@@ -41,14 +42,22 @@ function submits() {
 function usernameCheck() {
   const usernameValue = username.value.trim();
 
+
+
   if(usernameValue === '') {
     setErrorFor(username, 'Username cannot be blank');
     return false;
   } else {
+    var userData = {
+      'functionName' : "usernameCheck",
+      'username' : usernameValue
+    };
+    userData = JSON.stringify(userData);
     var xhttp = new XMLHttpRequest();
-    xhttp.open('POST', '../controllers/registrationUsernameController.php', true);
+    xhttp.open('POST', '../controllers/registrationController.php', true);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.send('username='+usernameValue);
+    xhttp.send('json='+userData);
+
 
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
@@ -93,10 +102,15 @@ function emailCheck() {
     return false;
   }
   else {
+    var userData = {
+      'functionName' : "emailCheck",
+      'email' : emailValue
+    };
+    userData = JSON.stringify(userData);
     var xhttp = new XMLHttpRequest();
-    xhttp.open('POST', '../controllers/registrationEmailController.php', true);
+    xhttp.open('POST', '../controllers/registrationController.php', true);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.send('email='+emailValue);
+    xhttp.send('json='+userData);
 
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){

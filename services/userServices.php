@@ -55,7 +55,7 @@
         }
       }
       else {
-        return "this username does nottttttttt exist";
+        return "this username does not exist";
       }
     } catch (Exception $e) {
       return $e;

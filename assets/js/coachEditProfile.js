@@ -1,3 +1,4 @@
+const name = document.getElementById('name');
 const phone = document.getElementById('phone');
 const ign = document.getElementById('ign');
 const discord = document.getElementById('discord');
@@ -7,15 +8,48 @@ const primaryRole = document.getElementById('primaryRole');
 const achievements = document.getElementById('achievements');
 const timetable = document.getElementById('timetable');
 const aboutMe = document.getElementById('aboutMe');
-const securityQuestion = document.getElementById('securityQuestion');
-const answer = document.getElementById('answer');
 const userId = document.getElementById('userId');
+
+
+function setData() {
+  var userIdValue = userId.value.trim();
+
+  var coachData = {
+    'functionName' : "setData",
+    'userId' : userIdValue
+  };
+
+  coachData = JSON.stringify(coachData);
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.open('POST', '../controllers/coachEditProfileController.php', true);
+  xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+  xhttp.responseType = "json";
+  xhttp.send('json='+coachData);
+
+  xhttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+      name.value = this.response.name;
+      phone.value = this.response.phone;
+      ign.value = this.response.ign;
+      discord.value = this.response.discord;
+      steam.value = this.response.steam;
+      mmr.value = this.response.mmr;
+      primaryRole.value = this.response.primaryRole;
+      achievements.value = this.response.achievements;
+      timetable.value = this.response.timetable;
+      aboutMe.value = this.response.aboutMe;
+    }
+  }
+}
 
 function submits() {
   var userIdValue = userId.value.trim();
-  if (phoneCheck() && ignCheck() && discordCheck() && steamCheck() && mmrCheck() && primaryRoleCheck() && securityQuestionCheck() && answerCheck()) {
+  if (nameCheck() && phoneCheck() && ignCheck() && discordCheck() && steamCheck() && mmrCheck() && primaryRoleCheck()) {
     var coachData = {
+      'functionName' : "submits",
       'userId' : userIdValue,
+      'name' : nameCheck(),
       'phone' : phoneCheck(),
       'ign' : ignCheck(),
       'discord' : discordCheck(),
@@ -25,14 +59,12 @@ function submits() {
       'achievements' : achievementsCheck(),
       'timetable' : timetableCheck(),
       'aboutMe' : aboutMeCheck(),
-      'securityQuestion' : securityQuestionCheck(),
-      'answer' : answerCheck()
     };
     
     coachData = JSON.stringify(coachData);
 
     var xhttp = new XMLHttpRequest();
-    xhttp.open('POST', '../controllers/coachFirstProfileController.php', true);
+    xhttp.open('POST', '../controllers/coachEditProfileController.php', true);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhttp.responseType = "json";
     xhttp.send('json='+coachData);
@@ -44,7 +76,18 @@ function submits() {
     }
   }
   else {
-    alert('Setup failed');
+    alert('Edit failed');
+  }
+}
+
+function nameCheck() {
+  var nameValue = name.value.trim();
+  if (nameValue === '') {
+    alert("name Field Cannot be Empty");
+    return false;
+  }
+  else {
+    return nameValue;
   }
 }
 
@@ -129,24 +172,24 @@ function aboutMeCheck() {
   return aboutMeValue;
 }
 
-function securityQuestionCheck() {
-  var securityQuestionValue = securityQuestion.value.trim();
-  if (securityQuestionValue === '') {
-    alert("securityQuestion Field Cannot be Empty");
-    return false;
-  }
-  else {
-    return securityQuestionValue;
-  }
-}
+// function securityQuestionCheck() {
+//   var securityQuestionValue = securityQuestion.value.trim();
+//   if (securityQuestionValue === '') {
+//     alert("securityQuestion Field Cannot be Empty");
+//     return false;
+//   }
+//   else {
+//     return securityQuestionValue;
+//   }
+// }
 
-function answerCheck() {
-  var answerValue = answer.value.trim();
-  if (answerValue === '') {
-    alert("answer Field Cannot be Empty");
-    return false;
-  }
-  else {
-    return answerValue;
-  }
-}
+// function answerCheck() {
+//   var answerValue = answer.value.trim();
+//   if (answerValue === '') {
+//     alert("answer Field Cannot be Empty");
+//     return false;
+//   }
+//   else {
+//     return answerValue;
+//   }
+// }
