@@ -32,4 +32,121 @@
     }
   }
 
+  function updateCoach($userId, $name, $phone, $ign, $discord, $steam, $mmr, $primaryRole, $achievements, $timetable, $aboutMe) {
+    $connection = dbConnection();
+    $sql = "UPDATE coaches SET phone='$phone', IGN='$ign', discord='$discord', steam='$steam', mmr='$mmr', primaryRole='$primaryRole', achievements='$achievements', timetable='$timetable', aboutMe='$aboutMe' WHERE userId='$userId'";
+    $sql2 = "UPDATE users SET name='$name' WHERE userId='$userId'";
+    try {
+      mysqli_query($connection, $sql);
+      mysqli_query($connection, $sql2);
+      return "success";
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function getCoachData($userId) {
+    $connection = dbConnection();
+    $sql = "SELECT name FROM users WHERE userId='$userId'";
+    $sql2 = "SELECT * FROM coaches WHERE userId='$userId'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      $row = mysqli_fetch_assoc($result);
+      $name = $row['name'];
+
+      $result2 = mysqli_query($connection, $sql2);
+      $row2 = mysqli_fetch_assoc($result2);
+      $phone = $row2['phone'];
+      $ign = $row2['IGN'];
+      $discord = $row2['discord'];
+      $steam = $row2['steam'];
+      $mmr = $row2['mmr'];
+      $primaryRole = $row2['primaryRole'];
+      $achievements = $row2['achievements'];
+      $timetable = $row2['timetable'];
+      $aboutMe = $row2['aboutMe'];
+     
+      class returnData {
+
+      }
+      $returnData = new returnData();
+      $returnData->name = $name;
+      $returnData->phone = $phone;
+      $returnData->ign = $ign;
+      $returnData->discord = $discord;
+      $returnData->steam = $steam;
+      $returnData->mmr = $mmr;
+      $returnData->primaryRole = $primaryRole;
+      $returnData->achievements = $achievements;
+      $returnData->timetable = $timetable;
+      $returnData->aboutMe = $aboutMe;
+
+      return $returnData;
+
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function insertPackage($userId, $packageName, $packagePrice, $packageDuration) {
+    $connection = dbConnection();
+    $sql = "INSERT INTO packages VALUES ('','$userId', '$packageName', '$packagePrice', '$packageDuration')";
+    try {
+      mysqli_query($connection, $sql);
+      return "success";
+    } catch (Exception $e) {
+      return $e;
+      // return $e->getMessage();
+    }
+  }
+
+  function getPackageData($userId) {
+    $connection = dbConnection();
+    $sql = "SELECT * FROM packages WHERE userId='$userId'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      $string = "<table border=\"1\">
+      <tr>
+        <td>Package Name</td>
+        <td>Package Price</td>
+        <td>Package Duration</td>
+        <td>Option</td>
+      </tr>";
+      while ($row = mysqli_fetch_assoc($result)) {
+        $string = $string . "<tr>
+        <td>".$row["packageName"]."</td>
+        <td>".$row["packagePrice"]."</td>
+        <td>".$row["packageDuration"]."</td>
+        <td><button onclick=\"deletes(".$row["packageId"].")\">Delete</button></td>
+      </tr>\n";
+      }
+      $string = $string . "</table>";
+      return $string;
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function deletePackage($packageId) {
+    $connection = dbConnection();
+    $sql = "DELETE FROM packages WHERE packageId = '$packageId'";
+    try {
+      mysqli_query($connection, $sql);
+      return "success";
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function uploadImage($filedir,$userId) {
+    $connection = dbConnection();
+    $sql = "UPDATE coaches SET profilePicture='$filedir' WHERE userId='$userId'";
+    try {
+      mysqli_query($connection, $sql);
+      return "success";
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
 ?>
