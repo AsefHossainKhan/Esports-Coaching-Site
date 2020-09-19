@@ -61,6 +61,7 @@
       $discord = $row2['discord'];
       $steam = $row2['steam'];
       $mmr = $row2['mmr'];
+      $profilePicture = $row2['profilePicture'];
       $primaryRole = $row2['primaryRole'];
       $achievements = $row2['achievements'];
       $timetable = $row2['timetable'];
@@ -77,6 +78,7 @@
       $returnData->steam = $steam;
       $returnData->mmr = $mmr;
       $returnData->primaryRole = $primaryRole;
+      $returnData->profilePicture = $profilePicture;
       $returnData->achievements = $achievements;
       $returnData->timetable = $timetable;
       $returnData->aboutMe = $aboutMe;
