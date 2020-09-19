@@ -9,6 +9,8 @@ const achievements = document.getElementById('achievements');
 const availability = document.getElementById('availability');
 const about = document.getElementById('about');
 const userId = document.getElementById('userId');
+const profileAvatar = document.getElementById('profileAvatar');
+
 
 
 function setData() {
@@ -22,7 +24,7 @@ function setData() {
   coachData = JSON.stringify(coachData);
 
   var xhttp = new XMLHttpRequest();
-  xhttp.open('POST', '../controllers/coachEditProfileController.php', true);
+  xhttp.open('POST', '../controllers/coachProfileController.php', true);
   xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   xhttp.responseType = "json";
   xhttp.send('json='+coachData);
@@ -33,6 +35,8 @@ function setData() {
       profileName.innerHTML = this.response.ign + "<br><hr>" + this.response.name;
       achievements.innerHTML = this.response.achievements;
       availability.innerHTML = this.response.timetable;
+      alert(this.response.profilePicture);
+      profileAvatar.src = "../res/default.jpg";
       about.innerHTML = this.response.aboutMe;
     }
   }
