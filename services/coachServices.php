@@ -127,6 +127,31 @@
     }
   }
 
+  function justGetPackageData($userId) {
+    $connection = dbConnection();
+    $sql = "SELECT * FROM packages WHERE userId='$userId'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      $string = "<table border=\"1\">
+      <tr>
+        <td>Package Name</td>
+        <td>Package Price</td>
+        <td>Package Duration</td>
+      </tr>";
+      while ($row = mysqli_fetch_assoc($result)) {
+        $string = $string . "<tr>
+        <td>".$row["packageName"]."</td>
+        <td>".$row["packagePrice"]."</td>
+        <td>".$row["packageDuration"]."</td>
+      </tr>\n";
+      }
+      $string = $string . "</table>";
+      return $string;
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
   function deletePackage($packageId) {
     $connection = dbConnection();
     $sql = "DELETE FROM packages WHERE packageId = '$packageId'";
@@ -149,4 +174,92 @@
     }
   }
 
+  function getReviewsData($userId) {
+    $connection = dbConnection();
+    $sql = "SELECT * FROM reviews WHERE userId='$userId'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      $string = "<table border=\"1\">
+      <tr>
+        <td>Review</td>
+        <td>Featured?</td>
+        <td>Option</td>
+      </tr>";
+      while ($row = mysqli_fetch_assoc($result)) {
+        $string = $string . "<tr>
+        <td>".$row["review"]."</td>
+        <td>".$row["featuredReview"]."</td>
+        <td><button onclick=\"features(".$row["reviewId"].")\">feature?</button></td>
+      </tr>\n";
+      }
+      $string = $string . "</table>";
+      return $string;
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function featureReview($reviewId) {
+    $connection = dbConnection();
+    $sql = "SELECT * FROM reviews WHERE reviewId='$reviewId'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      $row = mysqli_fetch_assoc($result);
+      $currentFeature = $row['featuredReview'];
+      if ($currentFeature == "false") {
+        $sql2 = "UPDATE reviews SET featuredReview = 'true' WHERE reviewId='$reviewId'";
+        mysqli_query($connection, $sql2);
+        return "success";
+      }
+      else if ($currentFeature == "true") {
+        $sql2 = "UPDATE reviews SET featuredReview = 'false' WHERE reviewId='$reviewId'";
+        mysqli_query($connection, $sql2);
+        return "success";
+      }
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function justGetReviews($userId) {
+    $connection = dbConnection();
+    $sql = "SELECT * FROM reviews WHERE userId='$userId' AND featuredReview='false'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      $string = "<table border=\"1\">
+      <tr>
+        <td>Review</td>
+      </tr>";
+      while ($row = mysqli_fetch_assoc($result)) {
+        $string = $string . "<tr>
+        <td>".$row["review"]."</td>
+      </tr>\n";
+      }
+      $string = $string . "</table>";
+      return $string;
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function justGetFeaturedReviews($userId) {
+    $connection = dbConnection();
+    $sql = "SELECT * FROM reviews WHERE userId='$userId' AND featuredReview='true'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      $string = "<table border=\"1\">
+      <tr>
+        <td>Review</td>
+      </tr>";
+      while ($row = mysqli_fetch_assoc($result)) {
+        $string = $string . "<tr>
+        <td>".$row["review"]."</td>
+      </tr>\n";
+      }
+      $string = $string . "</table>";
+      return $string;
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
 ?>

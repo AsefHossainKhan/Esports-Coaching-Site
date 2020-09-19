@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
+<body onload="setData();setPackages();setReviews();setFeaturedReviews()">
   <header>
     <div class="container">
       <div id="branding">
@@ -27,31 +27,18 @@
   </header>
   
   <div class="container">
+    <input type="hidden" name="" id="userId" value="9">
     <div class="firstRow">
       <div class="profile-name">
         <img src="../res/discord.png" alt="profile-avatar" id="profile-avatar">
-        <h3 id="profile-name">Gamer Name <br><hr> Full Name </h3>
+        <h3 id="profileName">Gamer Name <br><hr> Full Name </h3>
         <br>
         <button>Change Profile Picture</button>
       </div>
       
       <div class="packages">
         <h1>Packages</h1>
-        <div class="individual-package">
-          <p>1 ghontay 10 taka</p>
-        </div>
-        <div class="individual-package">
-          <p>1 ghontay 10 taka</p>
-        </div>
-        <div class="individual-package">
-          <p>1 ghontay 10 taka</p>
-        </div>
-        <div class="individual-package">
-          <p>1 ghontay 10 taka</p>
-        </div>
-        <div class="individual-package">
-          <p>1 ghontay 10 taka</p>
-        </div>
+        <p id="rowData"></p>
           <Button>Edit Packages</Button>
       </div>
     </div>
@@ -59,33 +46,33 @@
     <div class="secondRow">
       <div class="achievements">
         <h1>Achievements</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam officiis distinctio maiores deleniti quis cum tempora animi, accusamus corporis quas nostrum a quod veniam tenetur reprehenderit enim temporibus facere assumenda!</p>
+        <p id = "achievements">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam officiis distinctio maiores deleniti quis cum tempora animi, accusamus corporis quas nostrum a quod veniam tenetur reprehenderit enim temporibus facere assumenda!</p>
       </div>
       
       <div class="availability">
         <h1>Availability</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
+        <p id = "availability">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
       </div>
     </div>
 
     <div class="thirdRow">
       <div class="about">
         <h1>About</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
+        <p id="about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
       </div>
     </div>
 
     <div class="fourthRow">
       <div class="featuredReview">
         <h1>Featured Review</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
+        <p id="featuredReview">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
       </div>
     </div>
 
     <div class="fifthRow">
       <div class="reviews">
         <h1>Reviews</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
+        <p id = "reviews">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
       </div>
     </div>
     
@@ -118,5 +105,8 @@
       </ul>
     </div>
   </footer>
+
+  <script src="../assets/js/coachProfile.js"></script>
+
 </body>
 </html>

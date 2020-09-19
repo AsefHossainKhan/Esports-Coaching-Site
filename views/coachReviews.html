@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <link rel="stylesheet" href="../assets/css/coachForgotPassword.css">
+  <link rel="stylesheet" href="../assets/css/coachPackages.css">
   <title>Document</title>
 </head>
-<body onload="setQuestion()">
+<body onload="currentReviews()">
   
   <header>
     <div class="container">
@@ -28,17 +28,11 @@
   </header>
     
   <div class="container">
-    <div class="forgotPassword">
+    <div class="packages">
       <input type="hidden" name="" id="userId" value="9">
-      <h4>Security Question</h4>
-      <h4 id="securityQuestion">Security Question Here</h4>
-      <h4>Answer</h4>
-      <h4><input type="text" id="answer"></h4>
-
-      <h4>New Password</h4>
-      <input type="password" name="" id="password">
-
-      <button onclick="submits()">Change Password</button>
+      <h1>Current Reviews</h1>
+      <p id="rowData">
+      </p>
     </div>
   </div>
     
@@ -71,6 +65,7 @@
     </div>
   </footer>
 
-  <script src="../assets/js/coachForgotPassword.js"></script>
+  <script src="../assets/js/coachReviews.js"></script>
+
   </body>
 </html>
