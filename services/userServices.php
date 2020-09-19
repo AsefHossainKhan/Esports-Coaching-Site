@@ -62,6 +62,63 @@
     }
 
   }
+
+  function setQuestion($userId) {
+    $connection = dbConnection();
+    $sql = "SELECT question FROM login WHERE userId='$userId'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      $row = mysqli_fetch_assoc($result);
+      $securityQuestion = $row['question'];
+      return $securityQuestion;
+    } catch (Exception $e) {
+      return $e;
+    }
+
+  }
+  
+  function coachForgotPassword($userId, $answer, $password) {
+    $connection = dbConnection();
+    $sql = "SELECT answer FROM login WHERE userId='$userId'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      $row = mysqli_fetch_assoc($result);
+      $actualAnswer = $row['answer'];
+      if ($actualAnswer == $answer){
+        $sql2 = "UPDATE login SET password = '$password' WHERE userId = '$userId'";
+        mysqli_query($connection, $sql2); 
+        return "they matched";
+
+      }
+      else {
+        return "they didn't match";
+      }
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function coachResetPassword($userId, $currentPassword, $password) {
+    $connection = dbConnection();
+    $sql = "SELECT password FROM login WHERE userId='$userId'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      $row = mysqli_fetch_assoc($result);
+      $actualPassword = $row['password'];
+      if ($actualPassword == $currentPassword){
+        $sql2 = "UPDATE login SET password = '$password' WHERE userId = '$userId'";
+        mysqli_query($connection, $sql2); 
+        return "Successfully Password Changed";
+
+      }
+      else {
+        return "Current Password is incorrect";
+      }
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
   function isPasswordMached($password, $confirmPassword){
     if($password !== $confirmPassword){
       return false;
@@ -83,4 +140,5 @@
     $sql3 = "INSERT INTO login(userId,password) VALUES('".$fetch["UserId"]."','".$password."')";
     mysqli_query($connection, $sql3);
   }
+
 ?>
