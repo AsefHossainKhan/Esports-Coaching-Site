@@ -1,5 +1,6 @@
 <?php
 
+    require_once("../services/adminServices.php");
     require_once("../services/userServices.php");
 
     $username = $_POST["username"];
