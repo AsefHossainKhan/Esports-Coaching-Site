@@ -20,6 +20,22 @@ body h1{
     background-color: rgba(137, 190, 139, 0.425);
 }
 
+.right{
+    display: block;
+    position: absolute; 
+    left : 220px;
+    top : 60px;
+    width: 1300px;
+    height: 623px;
+    background-color: rgba(137, 190, 139, 0.425);
+}
+
+.addAdminForm{
+    position: absolute; 
+    left : 30px;
+    top : 30px;
+}
+
 
     nav a{
         display: block;
