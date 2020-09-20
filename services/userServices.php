@@ -37,7 +37,6 @@
 
   }
 
-  
   function validateUser($username,$password) {
     $connection = dbConnection();
     $sql = "SELECT userId FROM users WHERE userName='$username'";
@@ -119,7 +118,5 @@
       return $e;
     }
   }
-
-  
 
 ?>

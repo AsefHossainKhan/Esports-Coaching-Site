@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Home</title>
-    <!-- <link rel="stylesheet" href="../assets/css/header.css"> -->
-    <link rel="stylesheet" href="../assets/css/adminHomePage.css">
-    <script src="../assets/js/addAdmin.js"></script>
-</head>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Admin Home</title>
+      <!-- <link rel="stylesheet" href="../assets/css/header.css"> -->
+      <link rel="stylesheet" href="../assets/css/adminHomePage.css">
+      <script src="../assets/js/addAdmin.js"></script>
+      <script src="../assets/js/showCoaches.js"></script>
+      <script src="../assets/js/deleteAdmin.js"></script>
+  </head>
 
-<!-- <link rel="stylesheet" href="../assets/css/header.css"> -->
-<!-- <header>
-  <div class="container">
-    <div id="branding">
-      <h1><span class="highlight">E-Sport Coaching</h1>
-    </div>
-    <nav>
-    </nav>
-  </div>
-</header> -->
 
-<body>
-    <div class ="left">
-        <nav>
-            <a href="#" onclick="addAdminVisible()">Add Admin</a>
-            <a href="#">Pending Approval's</a>
-            <a href="#">Refund Purchase</a>
-            <a href="#">Payment Informations</a>
-            <a href="#">Manage Coaches</a>
-            <a href="#">Manage Students</a>
-            <a href="#">Manage Admins</a>
-            <a href="#">Settings</a>
-            <a href="#">Logout</a> 
-        </nav>
-    </div>
-    <h1>Welcome Admin</h1>
-    <div class="right" id="right">
-      <form class="addAdminForm" style="visibility: hidden" id="addAdminForm">
-        Username : <input type="text" id="username"><br><br>
-        Name :     <input type="text" id="name"><br><br>
-        Email :    <input type="text" id="email"><br><br>
-        Password : <input type="text" id="password"><br><br>
-        Confirm Password : <input type="text" id="confirmPassword"><br><br>
-        <input type="button" value="Submit" onclick="addAdmin()"><br><br>
-        <div id = "error"> </div>
-      </form>
-    </div>
-</body>
+    <body>
+      <div class ="left">
+          <nav>
+              <a href="#" onclick="addAdminVisible()">Add Admin</a>
+              <a href="#">Pending Approval's</a>
+              <a href="#">Refund Purchase</a>
+              <a href="#">Payment Informations</a>
+              <a href="#" onclick="showCoaches()">Manage Coaches</a>
+              <a href="#">Manage Students</a>
+              <a href="#">Manage Admins</a>
+              <a href="#">Settings</a>
+              <a href="#">Logout</a> 
+          </nav>
+      </div>
+
+      <h1>Welcome Admin</h1>
+      <!-- add Admin -->
+
+      <div class="right" id="right">
+          <table class="addAdminForm" style="visibility: hidden" id="addAdminForm">
+            <tr>
+
+              <td>Username :</td>
+              <td><input type="text" id="username"></td>
+            </tr><br><br>
+            <tr>
+              <td>Name :</td>
+              <td><input type="text" id="name"></td>
+            </tr><br><br>
+            <tr>
+              <td>Email :</td>
+              <td><input type="text" id="email"></td>
+            </tr><br><br>
+            <tr>
+              <td>Password :</td> 
+              <td> <input type="text" id="password"></td>
+            </tr><br><br>
+            <tr>
+              <td>Confirm Password :</td>
+              <td> <input type="text" id="confirmPassword"></td>
+            </tr><br><br>
+            <tr><td><input type="button" value="Submit" onclick="addAdmin()"></td></tr><br><br><br>
+            <div id = "error" style="visibility: hidden"> </div>
+          </table>
+
+          <!-- manage coaches -->
+
+          <table border="1" class="showCoaches" style="visibility: hidden" id="showCoaches">
+            
+              
+          
+          </table>
+
+      </div>
+
+    </body>
 </html>

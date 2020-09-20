@@ -1,8 +1,12 @@
 function addAdminVisible(){
+    document.getElementById("showCoaches").style.visibility = "hidden";
+    document.getElementById("error").style.visibility = "hidden";
     document.getElementById("addAdminForm").style.visibility = "visible";
 }
 
 function addAdmin(){
+    document.getElementById("error").style.visibility = "visible";
+
     var username = document.getElementById("username").value;
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
