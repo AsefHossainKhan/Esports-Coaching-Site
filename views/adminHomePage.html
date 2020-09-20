@@ -8,7 +8,9 @@
       <link rel="stylesheet" href="../assets/css/adminHomePage.css">
       <script src="../assets/js/addAdmin.js"></script>
       <script src="../assets/js/showCoaches.js"></script>
-      <script src="../assets/js/deleteAdmin.js"></script>
+      <script src="../assets/js/deleteCoaches.js"></script>
+      <script src="../assets/js/showStudents.js"></script>
+      <script src="../assets/js/deleteStudents.js"></script>
   </head>
 
 
@@ -20,7 +22,7 @@
               <a href="#">Refund Purchase</a>
               <a href="#">Payment Informations</a>
               <a href="#" onclick="showCoaches()">Manage Coaches</a>
-              <a href="#">Manage Students</a>
+              <a href="#" onclick="showStudents()">Manage Students</a>
               <a href="#">Manage Admins</a>
               <a href="#">Settings</a>
               <a href="#">Logout</a> 
@@ -57,14 +59,10 @@
             <div id = "error" style="visibility: hidden"> </div>
           </table>
 
-          <!-- manage coaches -->
+          <!-- manage coaches Table-->
 
-          <table border="1" class="showCoaches" style="visibility: hidden" id="showCoaches">
-            
-              
-          
-          </table>
-
+          <table border="1" class="showCoaches" style="visibility: hidden" id="showCoaches"></table>
+          <table border="1" class="showStudents" style="visibility: hidden" id="showStudents"></table>
       </div>
 
     </body>

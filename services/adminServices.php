@@ -24,7 +24,7 @@ function isPasswordMached($password, $confirmPassword){
     mysqli_query($connection, $sql3);
   }
 
-  function showAdminList(){
+  function showCoachList(){
     $connection = dbConnection(); 
     $userType = "Coach";
     $sql = "SELECT UserId,username,name,email,userType FROM users WHERE userType='".$userType."'";
@@ -43,7 +43,7 @@ function isPasswordMached($password, $confirmPassword){
               <td>".$fetch["name"]."</td>
               <td>".$fetch["email"]."</td>
               <td>".$fetch["userType"]."</td>
-              <td><input type='button' value='Remove' id=".$fetch["UserId"]." onclick='deleteAdmin(".$fetch["UserId"].")'></input></td>
+              <td><input type='button' value='Remove' id=".$fetch["UserId"]." onclick='deleteCoaches(".$fetch["UserId"].")'></input></td>
           </td></tr>";
         
       }
@@ -53,8 +53,29 @@ function isPasswordMached($password, $confirmPassword){
 
 }
 
+function showStudentList(){
+  $connection = dbConnection(); 
+  $userType = "Student";
+  $sql = "SELECT UserId,username,name,email,userType FROM users WHERE userType='".$userType."'";
+  $result= mysqli_query($connection, $sql);
 
-function deleteAdmin($id){
+    while($fetch = mysqli_fetch_assoc($result)){  
+
+      echo "<tr>
+        <td>".$fetch["username"]."</td>
+            <td>".$fetch["name"]."</td>
+            <td>".$fetch["email"]."</td>
+            <td>".$fetch["userType"]."</td>
+            <td><input type='button' value='Remove' id=".$fetch["UserId"]." onclick='deleteStudents(".$fetch["UserId"].")'></input></td>
+        </td></tr>";
+      
+    }
+
+
+}
+
+
+function deleteCoach($id){
   $connection = dbConnection(); 
   $sql1 = "DELETE FROM login WHERE userId='".$id."'";
   mysqli_query($connection, $sql1);
@@ -71,6 +92,16 @@ function deleteAdmin($id){
   // }else{
   //   echo "prob";
   // }
+}
+
+function deleteStudent($id){
+  $connection = dbConnection(); 
+  $sql1 = "DELETE FROM login WHERE userId='".$id."'";
+  mysqli_query($connection, $sql1);
+  $sql2 = "DELETE FROM students WHERE userId='".$id."'";
+  mysqli_query($connection, $sql2);
+  $sql = "DELETE FROM users WHERE userId='".$id."'";
+  mysqli_query($connection, $sql);
 }
 
 ?>

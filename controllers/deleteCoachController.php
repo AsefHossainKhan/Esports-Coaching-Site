@@ -4,9 +4,9 @@
 
     $id = $_POST["id"];
 
-    $result = deleteAdmin($id);
+    $result = deleteCoach($id);
    
-    showAdminList();
+    showCoachList();
   
 
 ?>
