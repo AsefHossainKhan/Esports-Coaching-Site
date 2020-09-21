@@ -29,7 +29,7 @@
     
   <div class="container">
     <div class="forgotPassword">
-      <input type="hidden" name="" id="userId" value="9">
+      <input type="hidden" name="" id="userId" value="<?=$_GET['userId']?>">
       <h4>Security Question</h4>
       <h4 id="securityQuestion">Security Question Here</h4>
       <h4>Answer</h4>

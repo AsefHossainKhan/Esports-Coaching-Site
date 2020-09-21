@@ -40,7 +40,7 @@ function submits() {
 }
 
 function usernameCheck() {
-  const usernameValue = username.value.trim();
+  var usernameValue = username.value.trim();
 
 
 

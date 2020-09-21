@@ -35,8 +35,7 @@ function setData() {
       profileName.innerHTML = this.response.ign + "<br><hr>" + this.response.name;
       achievements.innerHTML = this.response.achievements;
       availability.innerHTML = this.response.timetable;
-      alert(this.response.profilePicture);
-      profileAvatar.src = "../res/default.jpg";
+      profileAvatar.src = this.response.profilePicture;
       about.innerHTML = this.response.aboutMe;
     }
   }

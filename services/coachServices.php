@@ -107,11 +107,11 @@
     $sql = "SELECT * FROM packages WHERE userId='$userId'";
     try {
       $result = mysqli_query($connection, $sql);
-      $string = "<table border=\"1\">
+      $string = "<table border=\"1\" class=\"myTable\">
       <tr>
-        <td>Package Name</td>
-        <td>Package Price</td>
-        <td>Package Duration</td>
+        <td class=\"package-header\">Package Name</td>
+        <td class=\"package-header\">Package Price</td>
+        <td class=\"package-header\">Package Duration</td>
         <td>Option</td>
       </tr>";
       while ($row = mysqli_fetch_assoc($result)) {
@@ -134,11 +134,11 @@
     $sql = "SELECT * FROM packages WHERE userId='$userId'";
     try {
       $result = mysqli_query($connection, $sql);
-      $string = "<table border=\"1\">
+      $string = "<table border=\"1\" class=\"myTable\">
       <tr>
-        <td>Package Name</td>
-        <td>Package Price</td>
-        <td>Package Duration</td>
+        <td class=\"package-header\">Package Name</td>
+        <td class=\"package-header\">Package Price</td>
+        <td class=\"package-header\">Package Duration</td>
       </tr>";
       while ($row = mysqli_fetch_assoc($result)) {
         $string = $string . "<tr>
@@ -181,7 +181,7 @@
     $sql = "SELECT * FROM reviews WHERE userId='$userId'";
     try {
       $result = mysqli_query($connection, $sql);
-      $string = "<table border=\"1\">
+      $string = "<table border=\"1\" class=\"myTable\">
       <tr>
         <td>Review</td>
         <td>Featured?</td>
@@ -230,10 +230,17 @@
       $result = mysqli_query($connection, $sql);
       $string = "<table border=\"1\">
       <tr>
+        <td>Reviewer</td>
         <td>Review</td>
       </tr>";
       while ($row = mysqli_fetch_assoc($result)) {
+        $reviewerId = $row['reviewerId'];
+        $sql2 = "SELECT * FROM users WHERE userId='$reviewerId'";
+        $result2 = mysqli_query($connection, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+        $reviewerName = $row2['userName'];
         $string = $string . "<tr>
+        <td>".$reviewerName."</td>
         <td>".$row["review"]."</td>
       </tr>\n";
       }
@@ -251,10 +258,17 @@
       $result = mysqli_query($connection, $sql);
       $string = "<table border=\"1\">
       <tr>
+        <td>Reviewer</td>
         <td>Review</td>
       </tr>";
       while ($row = mysqli_fetch_assoc($result)) {
+        $reviewerId = $row['reviewerId'];
+        $sql2 = "SELECT * FROM users WHERE userId='$reviewerId'";
+        $result2 = mysqli_query($connection, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+        $reviewerName = $row2['userName'];
         $string = $string . "<tr>
+        <td>".$reviewerName."</td>
         <td>".$row["review"]."</td>
       </tr>\n";
       }

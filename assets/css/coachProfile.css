@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #5c5c5c;
+  background-color: #dee1ec;
   font-family: 'Open Sans', sans-serif;
   align-items: center;
   justify-content: center;
@@ -11,13 +11,20 @@ body {
   margin: 0;
 }
 
+.container{
+  position: relative;
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+}
+
 .firstRow {
   position: relative;
-  min-height: 300px;
+  min-height: 350px;
 }
 
 .profile-name {
-  background-color: #eb8500;
+  background-color: #364f6b;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   width: 60%;
@@ -25,34 +32,59 @@ body {
   margin-top: 20px;
   position: absolute;
   right: 40%;
-  
+  color: white;
 }
 
-#profile-avatar {
+#profileAvatar {
   position: relative;
   margin: 20px;
   border-radius: 100px;
-  display: inline;
+  /* display: absolute; */
   width: 200px;
   height: 200px;
 }
+/* #profileAvatar img{
+  width: 100px;
+  height: 100px;
+} */
 
-#profile-name {
+#profileName {
   display: inline-block;
-  position: relative;
-  bottom: 100px;
-  left: 40px;
+  position: absolute;
+  right: 150px;
+  top: 60px;
+}
+
+.myButton {
+  background-color:#e8491d;
+  border: 2px solid #35424a;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
 }
 
 .packages {
-  background-color: #eb8500;
+  background-color: #364f6b;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  width: 25%;
+  width: 30%;
   overflow: hidden;
   margin-top: 20px;
   position: absolute;
-  left: 75%;
+  left: 70%;
+  color: white;
+  text-align: center;
+}
+
+.packages table {
+  border-color: white;
+  border-width: 3px;
+  margin: auto;
 }
 
 .packages h1{
@@ -61,6 +93,10 @@ body {
   align-items: center;
   justify-content: center;
 
+}
+
+.package-header {
+  font-weight: bold;
 }
 
 .individual-package p{
@@ -74,11 +110,11 @@ body {
 
 .secondRow {
   position: relative;
-  min-height: 400px;
+  min-height: 350px;
 }
 
 .achievements {
-  background-color: #eb8500;
+  background-color: #364f6b;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   width: 60%;
@@ -86,33 +122,72 @@ body {
   margin-top: 20px;
   position: absolute;
   right: 40%;
+}
 
+.achievements h1 {
+  margin: 20px;
+  text-align: center;
+  color: white;
+}
+
+.achievements pre {
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  white-space: pre-wrap;
 }
 
 .availability {
-  background-color: #eb8500;
+  background-color: #364f6b;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  width: 25%;
+  width: 30%;
   overflow: hidden;
   margin-top: 20px;
   position: absolute;
-  left: 75%
+  left: 70%
 }
+
+.availability h1 {
+  margin: 20px;
+  text-align: center;
+  color: white;
+}
+
+.availability pre {
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
 
 .thirdRow {
   position: relative;
-  min-height: 300px;
+  min-height: 1000px;
 }
 
 .about {
-  background-color: #eb8500;
+  background-color: #364f6b;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   width: 100%;
   overflow: hidden;
   margin-top: 20px;
   position: absolute;
+}
+
+.about h1 {
+  margin: 20px;
+  text-align: center;
+  color: white;
+}
+
+.about pre {
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  white-space: pre-wrap;
 }
 
 .fourthRow {
@@ -121,13 +196,41 @@ body {
 }
 
 .featuredReview {
-  background-color: #eb8500;
+  background-color: #364f6b;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   width: 100%;
   overflow: hidden;
   margin-top: 20px;
   position: absolute;
+}
+
+.featuredReview h1 {
+  margin: 20px;
+  text-align: center;
+  color: white;
+}
+
+.featuredReview pre {
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
+.featuredReview table {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  border-color: white;
+}
+
+.featuredReview table tr:first-child {
+  font-weight: bold;
+}
+
+.featuredReview table td:first-child {
+  width: 20%;
 }
 
 .fifthRow {
@@ -136,11 +239,39 @@ body {
 }
 
 .reviews {
-  background-color: #eb8500;
+  background-color: #364f6b;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   width: 100%;
   overflow: hidden;
   margin-top: 20px;
   position: absolute;
+}
+
+.reviews h1 {
+  margin: 20px;
+  text-align: center;
+  color: white;
+}
+
+.reviews pre {
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
+.reviews table {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  border-color: white;
+}
+
+.reviews table tr:first-child {
+  font-weight: bold;
+}
+
+.reviews table td:first-child {
+  width: 20%;
 }
