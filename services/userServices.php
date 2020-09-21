@@ -119,4 +119,20 @@
     }
   }
 
+  function doesUsernameExist($username) {
+    $connection = dbConnection();
+    $sql = "SELECT userId FROM users WHERE userName = '$username'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      if ($row = mysqli_fetch_assoc($result)) {
+        return $row['userId'];
+      }
+      else {
+        return "this username does not exist";
+      }
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
 ?>
