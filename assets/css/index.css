@@ -61,6 +61,7 @@ ul{
 #showcase .box img{
 	height: 200px;
 	width: 200px;
+	border-radius: 50%;
 }
 
 /*newsletter*/
@@ -78,12 +79,12 @@ ul{
 }
 
 #newsletter form {
-  float:right;
-  margin-top:15px;
+ 
+  margin-top:20px;
 }
 
 #newsletter input{
-  padding:4px;
+  padding:10px;
   height:25px;
   width:250px;
 }
@@ -116,6 +117,7 @@ ul{
 	padding-right: 20px;
 	color: #f75e34;
 	font-weight:bold;
+
 }
 
 /* Review */
@@ -136,3 +138,32 @@ ul{
 	text-align: center;
 	color: #ff7417;
 }
+
+#featured-master-info{
+	text-align: center;
+	font-size: 18px;
+	color:#ff7417;
+	padding: 5px;
+	width: 100%;
+	background: #e4e4e4;
+}
+
+#searched-master-info{
+	color:#35424a;
+	padding: 10px;
+	margin: 10px;
+	width: 100%;
+	background: #e6e6e6;
+	text-align: center;
+	border-bottom: 2px solid #35424a;
+}
+
+#searched-master-info table{
+	margin: auto;
+	font-size: 18px;
+	padding: 20px;
+}
+#searched-master-info table th{
+	width: 250px;
+}
+
