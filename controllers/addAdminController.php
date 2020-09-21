@@ -27,7 +27,7 @@
     }
     else{
         $userType = "Admin";
-        createUser($username,$name,$email,$password,$userType); 
+        createAdmin($username,$name,$email,$password,$userType); 
     }
 
 

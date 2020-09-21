@@ -1,7 +1,8 @@
 function showStudents(){
     document.getElementById("addAdminForm").style.visibility = "hidden";
-    document.getElementById("showCoaches").style.visibility = "hidden";
     document.getElementById("error").style.visibility = "hidden";
+    document.getElementById("showCoaches").style.visibility = "hidden";
+    document.getElementById("showAdmins").style.visibility = "hidden";
     document.getElementById("showStudents").style.visibility = "visible";
 
     var xhttp = new XMLHttpRequest();

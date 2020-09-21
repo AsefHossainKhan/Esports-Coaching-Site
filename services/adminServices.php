@@ -10,8 +10,10 @@ function isPasswordMached($password, $confirmPassword){
     }
 }
 
-  function createUser($username, $name, $email, $password, $userType){
+  function createAdmin($username, $name, $email, $password, $userType){
     $connection = dbConnection(); 
+
+    $root = "Admin";
 
     $sql = "INSERT INTO users(userName,name,email,userType) VALUES('".$username."','".$name."','".$email."','".$userType."')";
     $result = mysqli_query($connection, $sql);
@@ -22,6 +24,9 @@ function isPasswordMached($password, $confirmPassword){
 
     $sql3 = "INSERT INTO login(userId,password) VALUES('".$fetch["UserId"]."','".$password."')";
     mysqli_query($connection, $sql3);
+
+    $sql4 = "INSERT INTO admins(userId,adminName,root) VALUES('".$fetch["UserId"]."','".$username."','".$root."')";
+    mysqli_query($connection, $sql4);
   }
 
   function showCoachList(){
@@ -31,6 +36,8 @@ function isPasswordMached($password, $confirmPassword){
     $result= mysqli_query($connection, $sql);
       // $fetch = mysqli_fetch_assoc($result);
       // print "<table border=2>";
+      echo "<tr><td>Username</td><td>Name</td><td>Email</td><td>Role</td><td>Action</td></tr>";
+
       while($fetch = mysqli_fetch_assoc($result)){  
          //$fetch["userId"];
          //sql1 ="UPDATE coaches SET approveStatus='Doe' WHERE id=2"
@@ -58,7 +65,7 @@ function showStudentList(){
   $userType = "Student";
   $sql = "SELECT UserId,username,name,email,userType FROM users WHERE userType='".$userType."'";
   $result= mysqli_query($connection, $sql);
-
+    echo "<tr><td>Username</td><td>Name</td><td>Email</td><td>Role</td><td>Action</td></tr>";
     while($fetch = mysqli_fetch_assoc($result)){  
 
       echo "<tr>
@@ -67,6 +74,29 @@ function showStudentList(){
             <td>".$fetch["email"]."</td>
             <td>".$fetch["userType"]."</td>
             <td><input type='button' value='Remove' id=".$fetch["UserId"]." onclick='deleteStudents(".$fetch["UserId"].")'></input></td>
+        </td></tr>";
+      
+    }
+
+
+}
+
+
+function showAdminList(){
+  $connection = dbConnection(); 
+  $userType = "Admin";
+  $sql = "SELECT UserId,username,name,email,userType FROM users WHERE userType='".$userType."'";
+  $result= mysqli_query($connection, $sql);
+  echo "<tr><td>Username</td><td>Name</td><td>Email</td><td>Role</td><td>Action</td></tr>";
+
+    while($fetch = mysqli_fetch_assoc($result)){  
+
+      echo "<tr>
+        <td>".$fetch["username"]."</td>
+            <td>".$fetch["name"]."</td>
+            <td>".$fetch["email"]."</td>
+            <td>".$fetch["userType"]."</td>
+            <td><input type='button' value='Remove' id=".$fetch["UserId"]." onclick='deleteAdmins(".$fetch["UserId"].")'></input></td>
         </td></tr>";
       
     }
@@ -103,5 +133,17 @@ function deleteStudent($id){
   $sql = "DELETE FROM users WHERE userId='".$id."'";
   mysqli_query($connection, $sql);
 }
+
+function deleteAdmin($id){
+  $connection = dbConnection(); 
+  $sql1 = "DELETE FROM admins WHERE userId='".$id."'";
+  mysqli_query($connection, $sql1);
+  $sql2 = "DELETE FROM login WHERE userId='".$id."'";
+  mysqli_query($connection, $sql2);
+  $sql = "DELETE FROM users WHERE userId='".$id."'";
+  mysqli_query($connection, $sql);
+}
+
+
 
 ?>
