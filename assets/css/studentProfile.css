@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+body{
+  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  padding:0;
+  margin:0;
+  background-color:#f4f4f4;
+
+}
+
+/* Global */
+.container{
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+}
+
+ul{
+  margin:0;
+  padding:0;
+}
+
+.button_1{
+  height:38px;
+  background:#e8491d;
+  border:0;
+  padding-left: 20px;
+  padding-right:20px;
+  color:#ffffff;
+}
+
+.dark{
+  padding:15px;
+  background:#35424a;
+  color:#ffffff;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.profile{
+  background:#EAEAEA;
+  text-align: center;
+}
+#profile-img img{
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  padding-top: 20px;
+
+}
+
+#profile-img h3{
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: grey;
+}
+
+.about{
+    background:#EAEAEA;
+  text-align: center;
+
+}
+#about h2{
+  font-size: 30px;
+  color: #e8491d;
+}
+
+#about p{
+  font-size: 18px;
+  line-height: 1.5em;
+  color: #515151;
+  padding-bottom: 20px;
+}
+.menu {
+  background-color: #35424a;
+  border-bottom: #e8491d 2px solid;}
+
+.menu #menu li{
+  display: inline;
+  /*padding: 0 20px 0 20px;*/
+}
+
+.menu #menu a{
+  float: right;
+  /*color:#e8491d;*/
+  color: #ffffff;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0 15px 0 15px;
+}
+.menu #menu a:hover{
+  color: #e8491d;
+  font-weight: bold;
+}
+
+#student-info{
+  background: #f1f3f3;
+  text-align: center;
+}
+.menu #menu p{
+  float: right;
+  color: #ffffff;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0 15px 0 15px;
+}
+.menu #menu p:hover{
+  color: #e8491d;
+  font-weight: bold;
+}
+
+#student-info label {
+  margin-top: 10px;
+  padding-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #35424a;
+}
+#student-info input {
+background: #f1f3f3;
+ margin-top: 5px;
+ margin-bottom: 5px;
+ height: 25px;
+ width: 200px;
+ border :none;
+ border-bottom: 2px solid #e8491d ;
+
+}
+#student-info h4{
+  font-size: 30px;
+  font-weight: bold;
+  color: #f75e34;
+
+
+}
+
+#student-info button{
+
+  font-size: 15px;
+  height: 30px;
+  background: #f4f4f4;
+  border: none;
+  border: 1px solid #f75e34;
+  border-radius: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: #f75e34;
+  font-weight:bold;
+  margin-top: 10px;
+
+  margin-bottom: 20px;
+
+
+}
+
+#update_discord{
+  border-top: 1px solid #f75e34;
+  text-align: center;
+}
+
