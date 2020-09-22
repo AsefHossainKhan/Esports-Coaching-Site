@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <link rel="stylesheet" href="../assets/css/coachForgotPassword.css">
+  <link rel="stylesheet" href="../assets/css/forgotPasswordInitial.css">
   <title>Document</title>
 </head>
 <body onload="setQuestion()">
@@ -28,8 +28,8 @@
     
   <div class="container">
     <div class="forgotPassword">
-      <h4>Username</h4>
-      <input type="text " id="username">
+      <h4 id="emailHeader">Enter Your Email</h4>
+      <input type="text" id="email">
       <button onclick="submits()">Go</button>
     </div>
   </div>

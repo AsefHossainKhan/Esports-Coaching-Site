@@ -1,15 +1,15 @@
-const username = document.getElementById('username');
+const email = document.getElementById('email');
 
 function submits() {
-  usernameValue = username.value.trim();
+  emailValue = email.value.trim();
 
-  if (usernameValue === '') {
-    alert ('Please enter a username');
+  if (emailValue === '') {
+    alert ('Please enter a email');
   }
   else {
     var coachData = {
       'functionName' : "submits",
-      'username' : usernameValue,
+      'email' : emailValue,
     };
 
     coachData = JSON.stringify(coachData);
@@ -23,7 +23,7 @@ function submits() {
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
         // alert(this.response.status);
-        if (this.response.status == "this username does not exist") {
+        if (this.response.status == "this email does not exist") {
           alert(this.response.status);
         }
         else {

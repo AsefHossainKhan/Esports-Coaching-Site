@@ -9,10 +9,10 @@ require_once '../sessionCookieCheck/sessionCookie.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <link rel="stylesheet" href="../assets/css/coachResetPassword.css">
+  <link rel="stylesheet" href="../assets/css/coachTransactions.css">
   <title>Document</title>
 </head>
-<body>
+<body onload="loadData();loadWallet()">
   
   <header>
     <div class="container">
@@ -35,16 +35,13 @@ require_once '../sessionCookieCheck/sessionCookie.php';
   </header>
     
   <div class="container">
-    <div class="resetPassword">
+    <div class="transactions">
       <input type="hidden" name="" id="userId" value="<?= $_SESSION["userId"];?>">
-      <h4 id="currentPasswordHeader">Current Password</h4>
-      <input type="password" id="currentPassword">
-      <h4>New Password</h4>
-      <input type="password" name="" id="password">
-      <h4>Confirm Password</h4>
-      <input type="password" name="" id="confirmPassword"> <br>
-
-      <button onclick="submits()">Change Password</button>
+      <h1>Wallet Value</h1>
+      <h1 id="wallet"></h1>
+      <h1>Current Reviews</h1>
+      <p id="rowData">
+      </p>
     </div>
   </div>
     
@@ -77,6 +74,7 @@ require_once '../sessionCookieCheck/sessionCookie.php';
     </div>
   </footer>
 
-  <script src="../assets/js/coachResetPassword.js"></script>
+  <script src="../assets/js/coachTransactions.js"></script>
+
   </body>
 </html>

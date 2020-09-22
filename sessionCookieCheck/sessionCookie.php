@@ -6,8 +6,8 @@
     if(isset($_SESSION["userId"])) {
         
     }
-    else if (isset($_COOKIE["rememberMe"])) {
-      $_SESSION['userId'] = $_COOKIE["rememberMe"];
+    else if (isset($_COOKIE["userId"])) {
+      $_SESSION['userId'] = $_COOKIE["userId"];
       $_SESSION['username'] = $_COOKIE['username'];
       $_SESSION['userType'] = $_COOKIE['userType'];
     }

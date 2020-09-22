@@ -5,7 +5,7 @@
   $coachData = json_decode($json);
   
   if ($coachData->functionName == "submits"){
-    $username = $coachData->username;
+    $email = $coachData->email;
 
     
     class returnData {
@@ -14,7 +14,7 @@
     $returnData = new returnData();
   
   
-    $status = doesUsernameExist($username);
+    $status = doesEmailExist($email);
     
     $returnData->status = $status;
   

@@ -38,7 +38,7 @@ require_once '../sessionCookieCheck/sessionCookie.php';
     <div class="profilePicture">
       <form action="../controllers/coachProfilePictureController.php" method="post" id="form" enctype="multipart/form-data">
         <h3>Change Profile Picture</h3>
-        <input type="file" name="profilePicture" id="profilePicture" accept=".jpg, .jpeg, .png">
+        <input class="thefileinput" type="file" name="profilePicture" id="profilePicture" accept=".jpg, .jpeg, .png"> <br>
         <input type="hidden" name="userId" value="<?= $_SESSION["userId"];?>">
         <input type="submit" id="submitButton" value="Change Profile Picture" name="submitButton">
       </form>

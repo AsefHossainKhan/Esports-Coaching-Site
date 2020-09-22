@@ -1,17 +1,25 @@
 const currentPassword = document.getElementById('currentPassword');
 const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirmPassword');
 const userId = document.getElementById('userId');
 
 function submits() {
   currentPasswordValue = currentPassword.value.trim();
   passwordValue = password.value.trim();
   userIdValue = userId.value.trim();
+  confirmPasswordValue = confirmPassword.value.trim();
 
   if (currentPasswordValue === '') {
-    alert ('Please enter an currentPassword');
+    alert ('Please enter an current Password');
   }
   else if (passwordValue === '') {
     alert ('Please enter a new password');
+  }
+  else if (passwordValue.length < 8) {
+    alert ('Password must be a minimum of 8 characters');
+  }
+  else if (passwordValue != confirmPasswordValue) {
+    alert ('Passwords do not match');
   }
   else {
     var coachData = {

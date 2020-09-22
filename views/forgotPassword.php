@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <link rel="stylesheet" href="../assets/css/coachForgotPassword.css">
+  <link rel="stylesheet" href="../assets/css/forgotPassword.css">
   <title>Document</title>
 </head>
 <body onload="setQuestion()">
@@ -29,7 +29,7 @@
   <div class="container">
     <div class="forgotPassword">
       <input type="hidden" name="" id="userId" value="<?=$_GET['userId']?>">
-      <h4>Security Question</h4>
+      <h4 id="securityQuestionHeader">Security Question</h4>
       <h4 id="securityQuestion">Security Question Here</h4>
       <h4>Answer</h4>
       <h4><input type="text" id="answer"></h4>
@@ -37,7 +37,10 @@
       <h4>New Password</h4>
       <input type="password" name="" id="password">
 
-      <button onclick="submits()">Change Password</button>
+      <h4>Confirm Password</h4>
+      <input type="password" name="" id="confirmPassword"><br>
+
+      <button onclick="submits()">Change Password</button> 
     </div>
   </div>
     

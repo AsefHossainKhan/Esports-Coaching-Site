@@ -1,6 +1,6 @@
 <?php
-require_once ("../sessionCookieCheck/coachProfileCheck.php");
 require_once '../sessionCookieCheck/sessionCookie.php';
+require_once ("../sessionCookieCheck/coachProfileCheck.php");
 ?>
 
 <!DOCTYPE html>

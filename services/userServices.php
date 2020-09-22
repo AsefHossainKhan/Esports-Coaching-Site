@@ -126,11 +126,11 @@
       if ($actualAnswer == $answer){
         $sql2 = "UPDATE login SET password = '$password' WHERE userId = '$userId'";
         mysqli_query($connection, $sql2); 
-        return "they matched";
+        return "Password Changed Successfully";
 
       }
       else {
-        return "they didn't match";
+        return "The Security Questions' Answer Is Incorrect";
       }
     } catch (Exception $e) {
       return $e;
@@ -168,6 +168,22 @@
       }
       else {
         return "this username does not exist";
+      }
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function doesEmailExist($email) {
+    $connection = dbConnection();
+    $sql = "SELECT userId FROM users WHERE email = '$email'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      if ($row = mysqli_fetch_assoc($result)) {
+        return $row['userId'];
+      }
+      else {
+        return "this email does not exist";
       }
     } catch (Exception $e) {
       return $e;
