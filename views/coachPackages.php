@@ -1,3 +1,7 @@
+<?php
+require_once '../sessionCookieCheck/sessionCookie.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +21,13 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">Sign in</a></li>
-            <li> <a href="#">Log in</a></li>
-            <li> <a href="#">Log out</a></li>
+            <li> <a href="indexUser.php">Home</a></li>
+            <li> <a href="coachProfileMain.php">Profile</a></li>
+            <li> <a href="coachEditProfile.php">Edit Profile</a></li>
+            <li> <a href="coachReviews.php">Reviews</a></li>
+            <li> <a href="coachTransactions.php">Transactions</a></li>
+            <li> <a href="coachResetPassword.php">Reset Password</a></li>
+            <li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
           </ul>
         </nav>
       </div>
@@ -29,11 +36,11 @@
     
   <div class="container">
     <div class="packages">
-      <input type="hidden" name="" id="userId" value="9">
+      <input type="hidden" name="" id="userId" value="<?= $_SESSION["userId"];?>">
       <h3>Package Name</h3>
       <input type="text" id="packageName"> <br>
       <h3>Package Price</h3>
-      <input type="text" id="packagePrice"> <br>
+      <input type="number" id="packagePrice"> <br>
       <h3>Package Duration</h3>
       <input type="text" id="packageDuration"> <br>
       <button onclick="addPackage()" id="addPackage">Add Package</button>

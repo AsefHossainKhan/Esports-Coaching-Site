@@ -1,3 +1,7 @@
+<?php
+require_once '../sessionCookieCheck/sessionCookie.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +21,8 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">Sign in</a></li>
-            <li> <a href="#">Log in</a></li>
-            <li> <a href="#">Log out</a></li>
+            <li> <a href="indexUser.php">Home</a></li>
+            <li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
           </ul>
         </nav>
       </div>
@@ -31,37 +33,37 @@
   <div class="container">
     <div class="edit-profile">
       <h1>First Time Setup</h1>
-      <input type="hidden" name="" id="userId" value="9">
+      <input type="hidden" name="" id="userId" value="<?= $_SESSION["userId"];?>">
       <table>
         <tr>
           <td>Phone*</td>
           <td>:</td>
-          <td><input type="number" id="phone" onkeyup="phoneCheck()"></td>
+          <td><input type="number" id="phone"></td>
         </tr>
         <tr>
           <td>IGN*</td>
           <td>:</td>
-          <td><input type="text" id="ign" onkeyup="ignCheck()"></td>
+          <td><input type="text" id="ign"></td>
         </tr>
         <tr>
           <td>Discord*</td>
           <td>:</td>
-          <td><input type="text" id="discord" onkeyup="discordCheck()"></td>
+          <td><input type="text" id="discord"></td>
         </tr>
         <tr>
           <td>Steam*</td>
           <td>:</td>
-          <td><input type="text" id="steam" onkeyup="steamCheck()"></td>
+          <td><input type="text" id="steam"></td>
         </tr>
         <tr>
           <td>MMR*</td>
           <td>:</td>
-          <td><input type="number" id="mmr" onkeyup="mmrCheck()"></td>
+          <td><input type="number" id="mmr"></td>
         </tr>
         <tr>
           <td>Primary Role*</td>
           <td>:</td>
-          <td><input type="text" id="primaryRole" onkeyup="primaryRoleCheck()"></td>
+          <td><input type="text" id="primaryRole"></td>
         </tr>
         <tr>
           <td>Achievements</td>
@@ -81,16 +83,16 @@
         <tr>
           <td>Security Question*</td>
           <td>:</td>
-          <td><input type="text" id="securityQuestion" onkeyup="securityQuestionCheck()"></td>
+          <td><input type="text" id="securityQuestion"></td>
         </tr>
         <tr>
           <td>Answer*</td>
           <td>:</td>
-          <td><input type="text" id="answer" onkeyup="answerCheck()"></td>
+          <td><input type="text" id="answer"></td>
         </tr>
       </table>
       <button onclick="submits()" class="myButton">Submit</button>
-      <button class="myButton">Cancel</button>
+      <a href="indexUser.php" style="text-decoration: none;"><button class="myButton">Cancel</button></a>
     </div>
   </div>
     

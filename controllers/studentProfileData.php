@@ -1,7 +1,10 @@
-
 <?php
+if(!isset($_SESSION)) 
+{ 
+  session_start(); 
+} 
 //$id=$_SESSION['id'];
-$id=12;
+$id=$_SESSION['userId'];
 include_once '../services/DBService.php';
 $model=new DBController();
 $sql = "SELECT users.userName,users.name,users.email,students.userId, students.phone, students.IGN, students.discord,students.steam,students.profilePicture from students,users where users.userId=students.userId and users.userId=".$id;

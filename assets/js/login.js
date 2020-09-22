@@ -4,12 +4,13 @@ const name = document.getElementById('name');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-
+const rememberMe = document.getElementById('rememberMe');
 
 
 function submits() {
   if (usernameCheck() && passwordCheck()) {
     var userData = {
+      'rememberMe' : rememberMe.checked,
       'username' : usernameCheck(),
       'password' : passwordCheck()
     };
@@ -25,6 +26,9 @@ function submits() {
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
         alert(this.response.status);
+        if (this.response.status == "success") {
+          location.replace("../views/indexUser.php");
+        }
       }
     }
   }

@@ -27,7 +27,7 @@ function submits() {
           alert(this.response.status);
         }
         else {
-          location.replace ("../views/coachForgotPassword.php?userId="+this.response.status);
+          location.replace ("../views/forgotPassword.php?userId="+this.response.status);
         }
       }
     }

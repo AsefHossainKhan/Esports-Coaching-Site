@@ -1,8 +1,5 @@
 <?php
-
-
 include_once '../controllers/coachProfileData.php';
-
 ?>
 
 

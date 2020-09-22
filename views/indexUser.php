@@ -16,7 +16,7 @@ require_once '../sessionCookieCheck/sessionCookie.php';
 <body>	
 
 <?php
-include 'header.php';
+include 'headerUser.php';
 ?>
 
 <section id="showcase" style="background:url('../res/controller.jpg') no-repeat 0 -200px; background-size: cover;">
@@ -27,7 +27,6 @@ include 'header.php';
 <?php
 for ($key=0; $key <3 ; $key++)
 { 
-  
   echo "<div class = \"box\" >";
   echo "<img src=\"".$coaches[$key]['profilePicture']."\">" ;
   echo "<h3 onclick=\"getCoach(".$coaches[$key]['userId'].");\">".$coaches[$key]['name']."</h3>";

@@ -1,3 +1,7 @@
+<?php
+require_once '../sessionCookieCheck/sessionCookie.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <link rel="stylesheet" href="../assets/css/coachPackages.css">
+  <link rel="stylesheet" href="../assets/css/coachForgotPassword.css">
   <title>Document</title>
 </head>
-<body onload="currentReviews()">
+<body>
   
   <header>
     <div class="container">
@@ -17,10 +21,13 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">Sign in</a></li>
-            <li> <a href="#">Log in</a></li>
-            <li> <a href="#">Log out</a></li>
+            <li> <a href="indexUser.php">Home</a></li>
+            <li> <a href="coachProfileMain.php">Profile</a></li>
+            <li> <a href="coachEditProfile.php">Edit Profile</a></li>
+            <li> <a href="coachReviews.php">Reviews</a></li>
+            <li> <a href="coachTransactions.php">Transactions</a></li>
+            <li> <a href="coachResetPassword.php">Reset Password</a></li>
+            <li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
           </ul>
         </nav>
       </div>
@@ -28,11 +35,14 @@
   </header>
     
   <div class="container">
-    <div class="packages">
-      <input type="hidden" name="" id="userId" value="9">
-      <h1>Current Reviews</h1>
-      <p id="rowData">
-      </p>
+    <div class="forgotPassword">
+      <input type="hidden" name="" id="userId" value="<?= $_SESSION["userId"];?>">
+      <h4>Current Password</h4>
+      <input type="password" id="currentPassword">
+      <h4>New Password</h4>
+      <input type="password" name="" id="password">
+
+      <button onclick="submits()">Change Password</button>
     </div>
   </div>
     
@@ -65,7 +75,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/coachReviews.js"></script>
-
+  <script src="../assets/js/coachResetPassword.js"></script>
   </body>
 </html>

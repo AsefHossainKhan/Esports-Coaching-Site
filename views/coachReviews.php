@@ -1,3 +1,7 @@
+<?php
+require_once '../sessionCookieCheck/sessionCookie.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <link rel="stylesheet" href="../assets/css/coachForgotPassword.css">
+  <link rel="stylesheet" href="../assets/css/coachPackages.css">
   <title>Document</title>
 </head>
-<body onload="setQuestion()">
+<body onload="currentReviews()">
   
   <header>
     <div class="container">
@@ -17,10 +21,13 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">Sign in</a></li>
-            <li> <a href="#">Log in</a></li>
-            <li> <a href="#">Log out</a></li>
+            <li> <a href="indexUser.php">Home</a></li>
+            <li> <a href="coachProfileMain.php">Profile</a></li>
+            <li> <a href="coachEditProfile.php">Edit Profile</a></li>
+            <li> <a href="coachReviews.php">Reviews</a></li>
+            <li> <a href="coachTransactions.php">Transactions</a></li>
+            <li> <a href="coachResetPassword.php">Reset Password</a></li>
+            <li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
           </ul>
         </nav>
       </div>
@@ -28,10 +35,11 @@
   </header>
     
   <div class="container">
-    <div class="forgotPassword">
-      <h4>Username</h4>
-      <input type="text " id="username">
-      <button onclick="submits()">Go</button>
+    <div class="packages">
+      <input type="hidden" name="" id="userId" value="<?= $_SESSION["userId"];?>">
+      <h1>Current Reviews</h1>
+      <p id="rowData">
+      </p>
     </div>
   </div>
     
@@ -64,6 +72,7 @@
     </div>
   </footer>
 
-  <script src="../assets/js/coachForgotPasswordInitial.js"></script>
+  <script src="../assets/js/coachReviews.js"></script>
+
   </body>
 </html>

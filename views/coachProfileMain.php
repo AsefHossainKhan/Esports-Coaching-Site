@@ -1,3 +1,8 @@
+<?php
+require_once ("../sessionCookieCheck/coachProfileCheck.php");
+require_once '../sessionCookieCheck/sessionCookie.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,29 +22,31 @@
       </div>
       <nav>
         <ul>
-          <li> <a href="#">Home</a></li>
-          <li> <a href="#">Sign in</a></li>
-          <li> <a href="#">Log in</a></li>
-          <li> <a href="#">Log out</a></li>
+          <li> <a href="indexUser.php">Home</a></li>
+          <li> <a href="coachEditProfile.php">Edit Profile</a></li>
+          <li> <a href="coachReviews.php">Reviews</a></li>
+          <li> <a href="coachTransactions.php">Transactions</a></li>
+          <li> <a href="coachResetPassword.php">Reset Password</a></li>
+          <li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
         </ul>
       </nav>
     </div>
   </header>
   
   <div class="container">
-    <input type="hidden" name="" id="userId" value="9">
+    <input type="hidden" name="" id="userId" value="<?= $_SESSION["userId"];?>">
     <div class="firstRow">
       <div class="profile-name">
         <img src="" alt="profile-avatar" id="profileAvatar">
         <h3 id="profileName">Gamer Name <br><hr> Full Name </h3>
         <br>
-        <button class="myButton">Change Profile Picture</button>
+        <a href="coachProfilePicture.php" style="text-decoration: none;"><button class="myButton">Change Profile Picture</button></a>
       </div>
       
       <div class="packages">
         <h1>Packages</h1>
         <p id="rowData"></p>
-          <Button class="myButton">Edit Packages</Button>
+          <a href="coachPackages.php" style="text-decoration: none;"><Button class="myButton">Edit Packages</Button></a>
       </div>
     </div>
     

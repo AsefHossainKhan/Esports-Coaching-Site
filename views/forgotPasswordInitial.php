@@ -17,10 +17,9 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">Sign in</a></li>
-            <li> <a href="#">Log in</a></li>
-            <li> <a href="#">Log out</a></li>
+          <li> <a href="index.php">Home</a></li>
+    	  	<li> <a href="registration.php">Sign Up</a></li>
+    	  	<li> <a href="login.php">Log in</a></li>
           </ul>
         </nav>
       </div>
@@ -29,16 +28,9 @@
     
   <div class="container">
     <div class="forgotPassword">
-      <input type="hidden" name="" id="userId" value="<?=$_GET['userId']?>">
-      <h4>Security Question</h4>
-      <h4 id="securityQuestion">Security Question Here</h4>
-      <h4>Answer</h4>
-      <h4><input type="text" id="answer"></h4>
-
-      <h4>New Password</h4>
-      <input type="password" name="" id="password">
-
-      <button onclick="submits()">Change Password</button>
+      <h4>Username</h4>
+      <input type="text " id="username">
+      <button onclick="submits()">Go</button>
     </div>
   </div>
     
@@ -71,6 +63,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/coachForgotPassword.js"></script>
+  <script src="../assets/js/forgotPasswordInitial.js"></script>
   </body>
 </html>

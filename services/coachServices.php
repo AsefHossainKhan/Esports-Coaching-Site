@@ -278,4 +278,20 @@
       return $e;
     }
   }
+
+  function checkExistence($userId) {
+    $connection = dbConnection();
+    $sql = "SELECT * FROM coaches WHERE userId='$userId'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      if ($row = mysqli_fetch_assoc($result)) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
 ?>

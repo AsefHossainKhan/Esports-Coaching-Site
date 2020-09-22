@@ -1,9 +1,9 @@
 <?php
   require_once("../services/userServices.php");
-
   $json = $_POST['json'];
   $userData = json_decode($json);
   
+  $rememberMe = $userData->rememberMe;
   $username = $userData->username;
   $password = $userData->password;
 
@@ -12,8 +12,12 @@
   }
   $returnData = new returnData();
 
-
-  $status = validateUser($username,$password);
+  if ($rememberMe) {
+    $status = validateUserWithCookie($username,$password);
+  }
+  else {
+    $status = validateUser($username,$password);
+  }
 
   $returnData->status = $status;
 

@@ -39,15 +39,54 @@
 
   function validateUser($username,$password) {
     $connection = dbConnection();
-    $sql = "SELECT userId FROM users WHERE userName='$username'";
+    $sql = "SELECT * FROM users WHERE userName='$username'";
     try {
       $result = mysqli_query($connection, $sql);
       if ($row = mysqli_fetch_assoc($result)) {
         $userId = $row['userId'];
+        $userType = $row['userType'];
         $sql2 = "SELECT password FROM login WHERE userId='$userId'";
         $result2 = mysqli_query($connection, $sql2);
         $row2 = mysqli_fetch_assoc($result2);
         if ($row2['password'] == $password) {
+          session_start();
+          $_SESSION['userId'] = $userId;
+          $_SESSION['username'] = $username;
+          $_SESSION['userType'] = $userType;
+          return "success";
+        }
+        else {
+          return "username and password don't match";
+        }
+      }
+      else {
+        return "this username does not exist";
+      }
+    } catch (Exception $e) {
+      return $e;
+    }
+
+  }
+
+  function validateUserWithCookie($username,$password) {
+    $connection = dbConnection();
+    $sql = "SELECT * FROM users WHERE userName='$username'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      if ($row = mysqli_fetch_assoc($result)) {
+        $userId = $row['userId'];
+        $userType = $row['userType'];
+        $sql2 = "SELECT password FROM login WHERE userId='$userId'";
+        $result2 = mysqli_query($connection, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+        if ($row2['password'] == $password) {
+          setcookie("userId", $userId, time()+3600, '/');
+          setcookie("username", $username, time()+3600, '/');
+          setcookie("userType", $userType, time()+3600, '/');
+          session_start();
+          $_SESSION['userId'] = $userId;
+          $_SESSION['username'] = $username;
+          $_SESSION['userType'] = $userType;
           return "success";
         }
         else {

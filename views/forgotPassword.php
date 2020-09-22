@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../assets/css/coachForgotPassword.css">
   <title>Document</title>
 </head>
-<body>
+<body onload="setQuestion()">
   
   <header>
     <div class="container">
@@ -17,10 +17,9 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">Sign in</a></li>
-            <li> <a href="#">Log in</a></li>
-            <li> <a href="#">Log out</a></li>
+          <li> <a href="index.php">Home</a></li>
+    		  <li> <a href="registration.php">Sign Up</a></li>
+    	  	<li> <a href="login.php">Log in</a></li>
           </ul>
         </nav>
       </div>
@@ -29,9 +28,12 @@
     
   <div class="container">
     <div class="forgotPassword">
-      <input type="hidden" name="" id="userId" value="9">
-      <h4>Current Password</h4>
-      <input type="password" id="currentPassword">
+      <input type="hidden" name="" id="userId" value="<?=$_GET['userId']?>">
+      <h4>Security Question</h4>
+      <h4 id="securityQuestion">Security Question Here</h4>
+      <h4>Answer</h4>
+      <h4><input type="text" id="answer"></h4>
+
       <h4>New Password</h4>
       <input type="password" name="" id="password">
 
@@ -68,6 +70,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/coachResetPassword.js"></script>
+  <script src="../assets/js/forgotPassword.js"></script>
   </body>
 </html>

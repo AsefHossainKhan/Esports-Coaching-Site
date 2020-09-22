@@ -20,10 +20,9 @@
         </div>
         <nav>
             <ul>
-                <li> <a href="#">Home</a></li>
-                <li> <a href="#">Sign in</a></li>
-                <li> <a href="#">Log in</a></li>
-                <li> <a href="#">Log out</a></li>
+                <li> <a href="index.php">Home</a></li>
+                <li> <a href="registration.php">Sign Up</a></li>
+                <li> <a href="login.php">Log in</a></li>
             </ul>
         </nav>
     </div>
@@ -50,8 +49,8 @@
                 <small>Error Message</small>
             </div>
 
-            <input type="checkbox" name="rememberMe" id="rememberMe">Remember me
-
+            <input type="checkbox" name="rememberMe" id="rememberMe">Remember me &nbsp; &nbsp; &nbsp;
+            <a href="forgotPasswordInitial.php">Forgot Password?</a>
             <input type="button" value="Login" onclick="submits()" id="button">
         </form>
     </div>

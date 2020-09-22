@@ -1,3 +1,7 @@
+<?php
+require_once '../sessionCookieCheck/sessionCookie.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +21,13 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">Sign in</a></li>
-            <li> <a href="#">Log in</a></li>
-            <li> <a href="#">Log out</a></li>
+            <li> <a href="indexUser.php">Home</a></li>
+            <li> <a href="coachProfileMain.php">Profile</a></li>
+            <li> <a href="coachEditProfile.php">Edit Profile</a></li>
+            <li> <a href="coachReviews.php">Reviews</a></li>
+            <li> <a href="coachTransactions.php">Transactions</a></li>
+            <li> <a href="coachResetPassword.php">Reset Password</a></li>
+            <li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
           </ul>
         </nav>
       </div>
@@ -31,7 +38,7 @@
   <div class="container">
     <div class="edit-profile">
       <h1>Edit Profile</h1>
-      <input type="hidden" name="" id="userId" value="9">
+      <input type="hidden" name="" id="userId" value="<?= $_SESSION["userId"];?>">
       <table>
         <tr>
           <td>Name*</td>
