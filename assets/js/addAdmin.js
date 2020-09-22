@@ -3,6 +3,7 @@ function addAdminVisible(){
     document.getElementById("error").style.visibility = "hidden";
     document.getElementById("showStudents").style.visibility = "hidden";
     document.getElementById("showAdmins").style.visibility = "hidden";
+    document.getElementById("coachApproval").style.visibility = "hidden";
     document.getElementById("addAdminForm").style.visibility = "visible";
 }
 

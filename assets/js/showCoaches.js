@@ -3,6 +3,7 @@ function showCoaches(){
     document.getElementById("error").style.visibility = "hidden";
     document.getElementById("showAdmins").style.visibility = "hidden";
     document.getElementById("showStudents").style.visibility = "hidden";
+    document.getElementById("coachApproval").style.visibility = "hidden";
     document.getElementById("showCoaches").style.visibility = "visible";
 
     var xhttp = new XMLHttpRequest();

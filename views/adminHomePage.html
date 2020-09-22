@@ -13,6 +13,8 @@
       <script src="../assets/js/deleteStudents.js"></script>
       <script src="../assets/js/showAdmins.js"></script>
       <script src="../assets/js/deleteAdmins.js"></script>
+      <script src="../assets/js/coachApproval.js"></script>
+      <script src="../assets/js/changeCoachStatus.js"></script>
   </head>
 
 
@@ -20,7 +22,7 @@
       <div class ="left">
           <nav>
               <a href="#" onclick="addAdminVisible()">Add Admin</a>
-              <a href="#">Pending Approval's</a>
+              <a href="#" onclick="coachApproval()">Pending Approval's</a>
               <a href="#">Refund Purchase</a>
               <a href="#">Payment Informations</a>
               <a href="#" onclick="showCoaches()">Manage Coaches</a>
@@ -66,6 +68,7 @@
           <table border="1" class="showCoaches" style="visibility: hidden" id="showCoaches"></table>
           <table border="1" class="showStudents" style="visibility: hidden" id="showStudents"></table>
           <table border="1" class="showAdmins" style="visibility: hidden" id="showAdmins"></table>
+          <table border="1" class="coachApproval" style="visibility: hidden" id="coachApproval"></table>
       </div>
 
     </body>

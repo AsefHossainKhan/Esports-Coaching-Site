@@ -10,6 +10,71 @@ function isPasswordMached($password, $confirmPassword){
     }
 }
 
+
+
+function showCoachApproveStatus(){
+  $connection = dbConnection();
+
+  $approveStatus = "false";
+  $sql = "SELECT * FROM coaches WHERE approveStatus='".$approveStatus."'";
+  $result= mysqli_query($connection, $sql);
+  
+  echo "<tr>
+  <td>User Name</td>
+  <td>Name</td>
+  <td>Email</td>
+  <td>UserType</td>
+  <td>Phone</td>
+  <td>Instagram</td>
+  <td>Discord</td>
+  <td>Steam</td>
+  <td>MMR</td>
+  <td>Primary Role</td>
+  <td>Wallet</td>
+  <td>Achievements</td>
+  <td>TimeTable</td>
+  <td>About Me</td>
+  <td>Setup Status</td>
+  <td>Action</td>
+  
+</td>";
+  
+  while($fetch = mysqli_fetch_assoc($result)){  
+
+          $sql1 = "SELECT * FROM users WHERE userId= '".$fetch["userId"]."'" ;
+          $result1= mysqli_query($connection, $sql1);
+
+          
+          while($fetch1 = mysqli_fetch_assoc($result1)){
+              echo "<tr>
+                        <td>".$fetch1["userName"]."</td>
+                        <td>".$fetch1["name"]."</td>
+                        <td>".$fetch1["email"]."</td>
+                        <td>".$fetch1["userType"]."</td>
+                    </td>";
+          }
+                echo "
+                <td>".$fetch["phone"]."</td>
+                <td>".$fetch["IGN"]."</td>
+                <td>".$fetch["discord"]."</td>
+                <td>".$fetch["steam"]."</td>
+                <td>".$fetch["mmr"]."</td>
+                <td>".$fetch["primaryRole"]."</td>
+                <td>".$fetch["wallet"]."</td>
+                <td>".$fetch["achievements"]."</td>
+                <td>".$fetch["timetable"]."</td>
+                <td>".$fetch["aboutMe"]."</td>
+                <td>".$fetch["setupStatus"]."</td>
+                <td><input type='button' value='Aprove' onclick='changeCoachStatus(".$fetch["userId"].")'></input></td>
+            </td></tr>";
+
+        }
+
+}
+
+
+  
+
   function createAdmin($username, $name, $email, $password, $userType){
     $connection = dbConnection(); 
 
@@ -143,6 +208,15 @@ function deleteAdmin($id){
   $sql = "DELETE FROM users WHERE userId='".$id."'";
   mysqli_query($connection, $sql);
 }
+
+function changeCoachStatus($id){
+  $connection = dbConnection(); 
+  $sql1 = "UPDATE coaches SET approveStatus='true' WHERE userId='".$id."'";
+  mysqli_query($connection, $sql1);
+}
+
+
+
 
 
 

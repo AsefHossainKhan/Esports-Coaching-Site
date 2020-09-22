@@ -57,3 +57,27 @@ body h1{
         background-color: rgb(122, 175, 138);
         color: white;
     }
+
+    .showCoaches{
+        position: absolute; 
+        left : 30px;
+        top : 30px;
+    }
+    
+    .showStudents{
+        position: absolute; 
+        left : 30px;
+        top : 30px;
+    }
+
+    .showAdmins{
+        position: absolute; 
+        left : 30px;
+        top : 30px;
+    }
+
+    .coachApproval{
+        position: absolute; 
+        left : 30px;
+        top : 30px;
+    }
