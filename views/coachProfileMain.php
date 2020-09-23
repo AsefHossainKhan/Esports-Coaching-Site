@@ -1,3 +1,8 @@
+<?php
+require_once '../sessionCookieCheck/sessionCookie.php';
+require_once ("../sessionCookieCheck/coachProfileCheck.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,62 +22,64 @@
       </div>
       <nav>
         <ul>
-          <li> <a href="#">Home</a></li>
-          <li> <a href="#">Sign in</a></li>
-          <li> <a href="#">Log in</a></li>
-          <li> <a href="#">Log out</a></li>
+          <li> <a href="indexUser.php">Home</a></li>
+          <li> <a href="coachEditProfile.php">Edit Profile</a></li>
+          <li> <a href="coachReviews.php">Reviews</a></li>
+          <li> <a href="coachTransactions.php">Transactions</a></li>
+          <li> <a href="coachResetPassword.php">Reset Password</a></li>
+          <li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
         </ul>
       </nav>
     </div>
   </header>
   
   <div class="container">
-    <input type="hidden" name="" id="userId" value="9">
+    <input type="hidden" name="" id="userId" value="<?= $_SESSION["userId"];?>">
     <div class="firstRow">
       <div class="profile-name">
         <img src="" alt="profile-avatar" id="profileAvatar">
         <h3 id="profileName">Gamer Name <br><hr> Full Name </h3>
         <br>
-        <button>Change Profile Picture</button>
+        <a href="coachProfilePicture.php" style="text-decoration: none;"><button class="myButton">Change Profile Picture</button></a>
       </div>
       
       <div class="packages">
         <h1>Packages</h1>
         <p id="rowData"></p>
-          <Button>Edit Packages</Button>
+          <a href="coachPackages.php" style="text-decoration: none;"><Button class="myButton">Edit Packages</Button></a>
       </div>
     </div>
     
     <div class="secondRow">
       <div class="achievements">
         <h1>Achievements</h1>
-        <p id = "achievements">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam officiis distinctio maiores deleniti quis cum tempora animi, accusamus corporis quas nostrum a quod veniam tenetur reprehenderit enim temporibus facere assumenda!</p>
+        <pre id = "achievements">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam officiis distinctio maiores deleniti quis cum tempora animi, accusamus corporis quas nostrum a quod veniam tenetur reprehenderit enim temporibus facere assumenda!</pre>
       </div>
       
       <div class="availability">
         <h1>Availability</h1>
-        <p id = "availability">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
+        <pre id = "availability">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</pre>
       </div>
     </div>
 
     <div class="thirdRow">
       <div class="about">
         <h1>About</h1>
-        <p id="about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
+        <pre id="about">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</pre>
       </div>
     </div>
 
     <div class="fourthRow">
       <div class="featuredReview">
         <h1>Featured Review</h1>
-        <p id="featuredReview">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
+        <pre id="featuredReview">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</pre>
       </div>
     </div>
 
     <div class="fifthRow">
       <div class="reviews">
         <h1>Reviews</h1>
-        <p id = "reviews">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</p>
+        <pre id = "reviews">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam beatae nobis aspernatur assumenda, similique deserunt. Rerum molestiae adipisci alias illum! Et impedit corporis repellendus adipisci ut itaque nesciunt earum rerum.</pre>
       </div>
     </div>
     

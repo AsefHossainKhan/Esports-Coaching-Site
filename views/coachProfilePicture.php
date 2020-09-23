@@ -1,3 +1,7 @@
+<?php
+require_once '../sessionCookieCheck/sessionCookie.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +21,13 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">Sign in</a></li>
-            <li> <a href="#">Log in</a></li>
-            <li> <a href="#">Log out</a></li>
+            <li> <a href="indexUser.php">Home</a></li>
+            <li> <a href="coachProfileMain.php">Profile</a></li>
+            <li> <a href="coachEditProfile.php">Edit Profile</a></li>
+            <li> <a href="coachReviews.php">Reviews</a></li>
+            <li> <a href="coachTransactions.php">Transactions</a></li>
+            <li> <a href="coachResetPassword.php">Reset Password</a></li>
+            <li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
           </ul>
         </nav>
       </div>
@@ -31,8 +38,8 @@
     <div class="profilePicture">
       <form action="../controllers/coachProfilePictureController.php" method="post" id="form" enctype="multipart/form-data">
         <h3>Change Profile Picture</h3>
-        <input type="file" name="profilePicture" id="profilePicture" accept=".jpg, .jpeg, .png">
-        <input type="hidden" name="userId" value="9">
+        <input class="thefileinput" type="file" name="profilePicture" id="profilePicture" accept=".jpg, .jpeg, .png"> <br>
+        <input type="hidden" name="userId" value="<?= $_SESSION["userId"];?>">
         <input type="submit" id="submitButton" value="Change Profile Picture" name="submitButton">
       </form>
     </div>

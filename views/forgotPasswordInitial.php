@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <link rel="stylesheet" href="../assets/css/coachForgotPassword.css">
+  <link rel="stylesheet" href="../assets/css/forgotPasswordInitial.css">
   <title>Document</title>
 </head>
-<body>
+<body onload="setQuestion()">
   
   <header>
     <div class="container">
@@ -17,10 +17,9 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">Sign in</a></li>
-            <li> <a href="#">Log in</a></li>
-            <li> <a href="#">Log out</a></li>
+          <li> <a href="index.php">Home</a></li>
+    	  	<li> <a href="registration.php">Sign Up</a></li>
+    	  	<li> <a href="login.php">Log in</a></li>
           </ul>
         </nav>
       </div>
@@ -29,13 +28,9 @@
     
   <div class="container">
     <div class="forgotPassword">
-      <input type="hidden" name="" id="userId" value="9">
-      <h4>Current Password</h4>
-      <input type="password" id="currentPassword">
-      <h4>New Password</h4>
-      <input type="password" name="" id="password">
-
-      <button onclick="submits()">Change Password</button>
+      <h4 id="emailHeader">Enter Your Email</h4>
+      <input type="text" id="email">
+      <button onclick="submits()">Go</button>
     </div>
   </div>
     
@@ -68,6 +63,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/coachResetPassword.js"></script>
+  <script src="../assets/js/forgotPasswordInitial.js"></script>
   </body>
 </html>

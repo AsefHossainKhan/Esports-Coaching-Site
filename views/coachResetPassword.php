@@ -1,3 +1,7 @@
+<?php
+require_once '../sessionCookieCheck/sessionCookie.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <link rel="stylesheet" href="../assets/css/coachForgotPassword.css">
+  <link rel="stylesheet" href="../assets/css/coachResetPassword.css">
   <title>Document</title>
 </head>
-<body onload="setQuestion()">
+<body>
   
   <header>
     <div class="container">
@@ -17,10 +21,13 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">Sign in</a></li>
-            <li> <a href="#">Log in</a></li>
-            <li> <a href="#">Log out</a></li>
+            <li> <a href="indexUser.php">Home</a></li>
+            <li> <a href="coachProfileMain.php">Profile</a></li>
+            <li> <a href="coachEditProfile.php">Edit Profile</a></li>
+            <li> <a href="coachReviews.php">Reviews</a></li>
+            <li> <a href="coachTransactions.php">Transactions</a></li>
+            <li> <a href="coachResetPassword.php">Reset Password</a></li>
+            <li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
           </ul>
         </nav>
       </div>
@@ -28,15 +35,14 @@
   </header>
     
   <div class="container">
-    <div class="forgotPassword">
-      <input type="hidden" name="" id="userId" value="9">
-      <h4>Security Question</h4>
-      <h4 id="securityQuestion">Security Question Here</h4>
-      <h4>Answer</h4>
-      <h4><input type="text" id="answer"></h4>
-
+    <div class="resetPassword">
+      <input type="hidden" name="" id="userId" value="<?= $_SESSION["userId"];?>">
+      <h4 id="currentPasswordHeader">Current Password</h4>
+      <input type="password" id="currentPassword">
       <h4>New Password</h4>
       <input type="password" name="" id="password">
+      <h4>Confirm Password</h4>
+      <input type="password" name="" id="confirmPassword"> <br>
 
       <button onclick="submits()">Change Password</button>
     </div>
@@ -71,6 +77,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/coachForgotPassword.js"></script>
+  <script src="../assets/js/coachResetPassword.js"></script>
   </body>
 </html>

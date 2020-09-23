@@ -107,11 +107,11 @@
     $sql = "SELECT * FROM packages WHERE userId='$userId'";
     try {
       $result = mysqli_query($connection, $sql);
-      $string = "<table border=\"1\">
+      $string = "<table border=\"1\" class=\"myTable\">
       <tr>
-        <td>Package Name</td>
-        <td>Package Price</td>
-        <td>Package Duration</td>
+        <td class=\"package-header\">Package Name</td>
+        <td class=\"package-header\">Package Price</td>
+        <td class=\"package-header\">Package Duration</td>
         <td>Option</td>
       </tr>";
       while ($row = mysqli_fetch_assoc($result)) {
@@ -134,11 +134,11 @@
     $sql = "SELECT * FROM packages WHERE userId='$userId'";
     try {
       $result = mysqli_query($connection, $sql);
-      $string = "<table border=\"1\">
+      $string = "<table border=\"1\" class=\"myTable\">
       <tr>
-        <td>Package Name</td>
-        <td>Package Price</td>
-        <td>Package Duration</td>
+        <td class=\"package-header\">Package Name</td>
+        <td class=\"package-header\">Package Price</td>
+        <td class=\"package-header\">Package Duration</td>
       </tr>";
       while ($row = mysqli_fetch_assoc($result)) {
         $string = $string . "<tr>
@@ -181,14 +181,21 @@
     $sql = "SELECT * FROM reviews WHERE userId='$userId'";
     try {
       $result = mysqli_query($connection, $sql);
-      $string = "<table border=\"1\">
+      $string = "<table border=\"1\" class=\"myTable\">
       <tr>
+        <td>Reviewer</td>
         <td>Review</td>
         <td>Featured?</td>
         <td>Option</td>
       </tr>";
       while ($row = mysqli_fetch_assoc($result)) {
+        $reviewerId = $row['reviewerId'];
+        $sql2 = "SELECT * FROM users WHERE userId='$reviewerId'";
+        $result2 = mysqli_query($connection, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+        $reviewerName = $row2['userName'];
         $string = $string . "<tr>
+        <td>".$reviewerName."</td>
         <td>".$row["review"]."</td>
         <td>".$row["featuredReview"]."</td>
         <td><button onclick=\"features(".$row["reviewId"].")\">feature?</button></td>
@@ -230,10 +237,17 @@
       $result = mysqli_query($connection, $sql);
       $string = "<table border=\"1\">
       <tr>
+        <td>Reviewer</td>
         <td>Review</td>
       </tr>";
       while ($row = mysqli_fetch_assoc($result)) {
+        $reviewerId = $row['reviewerId'];
+        $sql2 = "SELECT * FROM users WHERE userId='$reviewerId'";
+        $result2 = mysqli_query($connection, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+        $reviewerName = $row2['userName'];
         $string = $string . "<tr>
+        <td>".$reviewerName."</td>
         <td>".$row["review"]."</td>
       </tr>\n";
       }
@@ -251,15 +265,93 @@
       $result = mysqli_query($connection, $sql);
       $string = "<table border=\"1\">
       <tr>
+        <td>Reviewer</td>
         <td>Review</td>
       </tr>";
       while ($row = mysqli_fetch_assoc($result)) {
+        $reviewerId = $row['reviewerId'];
+        $sql2 = "SELECT * FROM users WHERE userId='$reviewerId'";
+        $result2 = mysqli_query($connection, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+        $reviewerName = $row2['userName'];
         $string = $string . "<tr>
+        <td>".$reviewerName."</td>
         <td>".$row["review"]."</td>
       </tr>\n";
       }
       $string = $string . "</table>";
       return $string;
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function checkExistence($userId) {
+    $connection = dbConnection();
+    $sql = "SELECT * FROM coaches WHERE userId='$userId'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      if ($row = mysqli_fetch_assoc($result)) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function getTransactionData($userId) {
+    $connection = dbConnection();
+    $sql = "SELECT * FROM coaches WHERE userId='$userId'";
+    try {
+      $sql5 = "SELECT * FROM users WHERE userId='$userId'";
+      $result5 = mysqli_query($connection, $sql5);
+      $row5 = mysqli_fetch_assoc($result5);
+      $coachName = $row5['userName'];
+      $result = mysqli_query($connection, $sql);
+      $row3 = mysqli_fetch_assoc($result);
+      $coachId = $row3['coachId'];
+      $sql3 = "SELECT * FROM transactions WHERE coachId='$coachId'";
+      $result3 = mysqli_query($connection, $sql3);
+      $string = "<table border=\"1\">
+      <tr>
+        <td>From</td>
+        <td>To</td>
+        <td>Amount</td>
+      </tr>";
+      while ($row = mysqli_fetch_assoc($result3)) {
+        $studentId = $row['studentId'];
+        $sql2 = "SELECT * FROM students WHERE studentId='$studentId'";
+        $result2 = mysqli_query($connection, $sql2);
+        $row2 = mysqli_fetch_assoc($result2);
+        $studentUserId = $row2['userId'];
+        $sql4 = "SELECT * FROM users WHERE userId='$studentUserId'";
+        $result4 = mysqli_query($connection, $sql4);
+        $row4 = mysqli_fetch_assoc($result4);
+        $studentName = $row4['userName'];
+        $string = $string . "<tr>
+        <td>".$studentName."</td>
+        <td>".$coachName."</td>
+        <td>".$row["amount"]."</td>
+      </tr>\n";
+      }
+      $string = $string . "</table>";
+      return $string;
+    } catch (Exception $e) {
+      return $e;
+    }
+  }
+
+  function getWallet($userId) {
+    $connection = dbConnection();
+    $sql = "SELECT * FROM coaches WHERE userId='$userId'";
+    try {
+      $result = mysqli_query($connection, $sql);
+      $row = mysqli_fetch_assoc($result);
+      $wallet = $row['wallet'];
+      return $wallet;
     } catch (Exception $e) {
       return $e;
     }

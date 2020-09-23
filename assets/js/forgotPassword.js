@@ -1,11 +1,13 @@
 const answer = document.getElementById('answer');
 const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirmPassword');
 const securityQuestion = document.getElementById('securityQuestion');
 const userId = document.getElementById('userId');
 
 function submits() {
   answerValue = answer.value.trim();
   passwordValue = password.value.trim();
+  confirmPasswordValue = confirmPassword.value.trim();
   userIdValue = userId.value.trim();
 
   if (answerValue === '') {
@@ -13,6 +15,12 @@ function submits() {
   }
   else if (passwordValue === '') {
     alert ('Please enter a new password');
+  }
+  else if (passwordValue.length < 8) {
+    alert ('Password must be a minimum of 8 characters');
+  }
+  else if (passwordValue != confirmPasswordValue) {
+    alert ('Passwords do not match');
   }
   else {
     var coachData = {

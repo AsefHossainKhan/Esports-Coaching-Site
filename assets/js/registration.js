@@ -30,6 +30,9 @@ function submits() {
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
         alert(this.response.status);
+        if (this.response.status == "success") {
+          location.replace("../views/login.php");
+        }
       }
     }
 
@@ -40,7 +43,7 @@ function submits() {
 }
 
 function usernameCheck() {
-  const usernameValue = username.value.trim();
+  var usernameValue = username.value.trim();
 
 
 
@@ -137,8 +140,8 @@ function passwordCheck() {
     setErrorFor(password, 'Password cannot be blank');
     return false;
   } 
-  else if (passwordValue.length <= 8) {
-    setErrorFor(password, 'Password cannot be longer than 8 characters');
+  else if (passwordValue.length < 8) {
+    setErrorFor(password, 'Password must be a minimum of 8 characters');
     return false;
   }
   else {

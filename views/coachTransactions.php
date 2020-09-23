@@ -1,3 +1,7 @@
+<?php
+require_once '../sessionCookieCheck/sessionCookie.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +9,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
-  <link rel="stylesheet" href="../assets/css/coachPackages.css">
+  <link rel="stylesheet" href="../assets/css/coachTransactions.css">
   <title>Document</title>
 </head>
-<body onload="currentReviews()">
+<body onload="loadData();loadWallet()">
   
   <header>
     <div class="container">
@@ -17,10 +21,13 @@
         </div>
         <nav>
           <ul>
-            <li> <a href="#">Home</a></li>
-            <li> <a href="#">Sign in</a></li>
-            <li> <a href="#">Log in</a></li>
-            <li> <a href="#">Log out</a></li>
+            <li> <a href="indexUser.php">Home</a></li>
+            <li> <a href="coachProfileMain.php">Profile</a></li>
+            <li> <a href="coachEditProfile.php">Edit Profile</a></li>
+            <li> <a href="coachReviews.php">Reviews</a></li>
+            <li> <a href="coachTransactions.php">Transactions</a></li>
+            <li> <a href="coachResetPassword.php">Reset Password</a></li>
+            <li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
           </ul>
         </nav>
       </div>
@@ -28,8 +35,10 @@
   </header>
     
   <div class="container">
-    <div class="packages">
-      <input type="hidden" name="" id="userId" value="9">
+    <div class="transactions">
+      <input type="hidden" name="" id="userId" value="<?= $_SESSION["userId"];?>">
+      <h1>Wallet Value</h1>
+      <h1 id="wallet"></h1>
       <h1>Current Reviews</h1>
       <p id="rowData">
       </p>
@@ -65,7 +74,7 @@
     </div>
   </footer>
 
-  <script src="../assets/js/coachReviews.js"></script>
+  <script src="../assets/js/coachTransactions.js"></script>
 
   </body>
 </html>

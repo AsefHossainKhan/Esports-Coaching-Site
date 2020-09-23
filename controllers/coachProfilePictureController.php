@@ -14,7 +14,7 @@
   else if(move_uploaded_file($_FILES['profilePicture']['tmp_name'], $filedir)){
     if (uploadImage($filedir,$userId)) {
       // echo "Image Uploaded Successfully";
-      header('Location: ../views/coachProfile.html');
+      header('Location: ../views/coachProfileMain.php');
     }  
     else {
       echo "Image upload failed but saved";

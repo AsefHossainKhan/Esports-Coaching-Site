@@ -1,3 +1,4 @@
+
 function showAdmins(){
     document.getElementById("addAdminForm").style.visibility = "hidden";
     document.getElementById("error").style.visibility = "hidden";
@@ -13,8 +14,12 @@ function showAdmins(){
 
     xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-            // document.getElementById("pendingApproval").innerHTML = "<table> border='1'";
-             document.getElementById("showAdmins").innerHTML = this.responseText; 
+           
+            if(this.responseText == "Not Allowed"){
+             document.getElementById("showAdmins").innerHTML = "Not Allowed"; 
+            }else{
+                document.getElementById("showAdmins").innerHTML = this.responseText; 
+            }
             //  document.getElementById("pendingApproval").innerHTML = "</table>";
              //alert(this.responseText);
         }

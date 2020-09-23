@@ -20,10 +20,9 @@
             </div>
             <nav>
                 <ul>
-                    <li> <a href="#">Home</a></li>
-                    <li> <a href="#">Sign in</a></li>
-                    <li> <a href="#">Log in</a></li>
-                    <li> <a href="#">Log out</a></li>
+                    <li> <a href="index.php">Home</a></li>
+                    <li> <a href="registration.php">Sign Up</a></li>
+                    <li> <a href="login.php">Log in</a></li>
                 </ul>
             </nav>
         </div>
