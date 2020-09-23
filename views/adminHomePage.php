@@ -29,7 +29,6 @@ require_once '../sessionCookieCheck/sessionCookie.php';
           <nav>
               <a href="#" onclick="addAdminVisible()">Add Admin</a>
               <a href="#" onclick="coachApproval()">Pending Approval's</a>
-              <a href="#">Payment Informations</a>
               <a href="#" onclick="showCoaches()">Manage Coaches</a>
               <a href="#" onclick="showStudents()">Manage Students</a>
               <a href="#" onclick="showAdmins()">Manage Admins</a>
