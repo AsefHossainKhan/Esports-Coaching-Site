@@ -33,8 +33,9 @@ require_once '../sessionCookieCheck/sessionCookie.php';
               <a href="#" onclick="showCoaches()">Manage Coaches</a>
               <a href="#" onclick="showStudents()">Manage Students</a>
               <a href="#" onclick="showAdmins()">Manage Admins</a>
-              <a href="#">Settings</a>
               <a href="../sessionCookieCheck/logout.php">Logout</a> 
+              <a href="#" onclick="redirectToTndex()">Back</a>
+              <script>function redirectToTndex(){window.location.href = "indexUser.php"}</script>
           </nav>
       </div>
 
