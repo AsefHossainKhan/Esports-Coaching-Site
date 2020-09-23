@@ -3,12 +3,12 @@
 }
 
 body {
-  background-color: #5c5c5c;
+  background-color: #dee1ec;
   font-family: 'Open Sans', sans-serif;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  margin: 0
+  margin: 0;
 }
 
 .profilePicture {

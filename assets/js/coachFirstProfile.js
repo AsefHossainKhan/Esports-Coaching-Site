@@ -39,7 +39,7 @@ function submits() {
 
     xhttp.onreadystatechange = function(){
       if(this.readyState == 4 && this.status == 200){
-        alert(this.response.status);
+        // alert(this.response.status);
         if (this.response.status == "success") {
           location.replace("../views/coachProfileMain.php");
         }
