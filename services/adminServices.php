@@ -1,14 +1,7 @@
 <?php
 
 require_once("../db/db.php");
-
-function isPasswordMached($password, $confirmPassword){
-    if($password !== $confirmPassword){
-      return false;
-    }else{
-      return true;
-    }
-}
+require_once '../sessionCookieCheck/sessionCookie.php';
 
 
 
@@ -75,7 +68,7 @@ function showCoachApproveStatus(){
 
   
 
-  function createAdmin($username, $name, $email, $password, $userType){
+  function createAdmin($username, $name, $email, $password, $userType, $question, $answer){
     $connection = dbConnection(); 
 
     $root = "Admin";
@@ -87,7 +80,7 @@ function showCoachApproveStatus(){
     $result2 = mysqli_query($connection, $sql2);
     $fetch = mysqli_fetch_assoc($result2);
 
-    $sql3 = "INSERT INTO login(userId,password) VALUES('".$fetch["UserId"]."','".$password."')";
+    $sql3 = "INSERT INTO login(userId,password,question,answer) VALUES('".$fetch["UserId"]."','".$password."','".$question."','".$answer."')";
     mysqli_query($connection, $sql3);
 
     $sql4 = "INSERT INTO admins(userId,adminName,root) VALUES('".$fetch["UserId"]."','".$username."','".$root."')";
@@ -149,6 +142,14 @@ function showStudentList(){
 
 function showAdminList(){
   $connection = dbConnection(); 
+  $userId = $_SESSION["userId"];
+  $sql1 =  "SELECT root FROM admins WHERE userId='".$userId."'";
+  $result1= mysqli_query($connection, $sql1);
+  $data = mysqli_fetch_assoc($result1);
+
+  if($data["root"]=="masterAdmin"){
+  
+
   $userType = "Admin";
   $sql = "SELECT UserId,username,name,email,userType FROM users WHERE userType='".$userType."'";
   $result= mysqli_query($connection, $sql);
@@ -165,6 +166,9 @@ function showAdminList(){
         </td></tr>";
       
     }
+  }else{
+    echo "Not Allowed.";
+  }
 
 
 }
