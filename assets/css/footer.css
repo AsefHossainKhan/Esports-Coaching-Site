@@ -9,6 +9,7 @@ body{
 }
 
 .container{
+  /* position: relative; */
   width:80%;
   margin:auto;
   overflow:hidden;

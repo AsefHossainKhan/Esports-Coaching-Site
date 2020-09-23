@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dee1ec;
+  font-family: 'Open Sans', sans-serif;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.packages {
+  /* edit out the min height if necessary */
+  min-height: 60vh; 
+  background-color: white;
+  border-radius: 3px;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+}
+
+.packages input {
+  padding: 5px;
+  width: 300px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+#packageName {
+  margin: 0 auto;
+}
+
+.packages button {
+  background-color:#e8491d;
+  border: 2px solid #35424a;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+}
+
+#addPackage {
+  background-color:#e8491d;
+  border: 2px solid #35424a;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 10px;
+  width: 50%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.packages h1 {
+  text-align: center;
+  color: #e8491d;
+}
+
+.packages h3 {
+  text-align: center;
+  color: #35424a;
+}
+
+.myTable {
+  margin: auto;
+  text-align: center;
+}
+
+.myTable td {
+  padding: 5px;
+}
+
+

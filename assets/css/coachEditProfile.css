@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dee1ec;
+  font-family: 'Open Sans', sans-serif;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.edit-profile {
+  /* edit out the min height if necessary */
+  min-height: 60vh; 
+  background-color: white;
+  border-radius: 3px;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 15px;
+}
+
+.edit-profile h1 {
+  color: #e8491d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-profile table {
+  width: 100%;
+}
+
+.edit-profile table td {
+  width: auto;
+}
+
+.edit-profile td:first-child {
+  width: 25%;
+}
+
+.edit-profile td:first-child {
+  color: #35424a;
+  font-weight: bold;
+}
+
+.edit-profile td:nth-child(2) {
+  color: #35424a;
+  font-weight: bold;
+}
+
+.edit-profile table td input{
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+}
+
+.edit-profile table td textarea{
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+}
+
+.myButton {
+  background-color:#e8491d;
+  border: 2px solid #35424a;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

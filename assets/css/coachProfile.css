@@ -1,0 +1,315 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #dee1ec;
+  font-family: 'Open Sans', sans-serif;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container{
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+}
+
+.firstRow {
+  display: flex;
+  margin: 0 auto;
+  min-height: 350px;
+
+}
+
+.profile-name {
+  background-color: #364f6b;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  /* width: 60%; */
+  width: 1000px;
+  overflow: hidden;
+  margin-top: 20px;
+  /* position: absolute; */
+  /* right: 40%; */
+  color: white;
+  margin-right: 100px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+#justprofileandname div h3:first-child {
+  padding-bottom: 25px;
+  border-bottom: 2px solid white;
+}
+
+#profileFullName {
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+
+}
+
+/* .profile-name div h3 {
+  display: block;
+  width: 400px;
+} */
+
+#justprofileandname {
+  display: flex;
+  width: 400px;
+}
+
+#profileAvatar {
+  /* position: relative; */
+  margin: 20px;
+  border-radius: 100px;
+  /* display: absolute; */
+  width: 200px;
+  height: 200px;
+}
+
+/* #profileAvatar img{
+  width: 100px;
+  height: 100px;
+} */
+
+#profileName {
+  display: flex;
+  /* position: absolute;
+  right: 150px;
+  top: 60px; */
+}
+
+.myButton {
+  background-color:#e8491d;
+  border: 2px solid #35424a;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.packages {
+  background-color: #364f6b;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 30%;
+  overflow: hidden;
+  margin-top: 20px;
+  /* position: absolute; */
+  /* left: 70%; */
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.packages table {
+  border-color: white;
+  border-width: 3px;
+  margin: auto;
+}
+
+.packages h1{
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.package-header {
+  font-weight: bold;
+}
+
+.individual-package p{
+  margin: 10px 10px;
+  border-radius: 5px;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondRow {
+  display: flex;
+  margin: 0 auto;
+  min-height: 400px;
+}
+
+.achievements {
+  background-color: #364f6b;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 1000px;
+  overflow: hidden;
+  margin-top: 20px;
+  /* position: absolute; */
+  /* right: 40%; */
+  margin-right: 100px;
+
+}
+
+.achievements h1 {
+  margin: 20px;
+  text-align: center;
+  color: white;
+}
+
+.achievements pre {
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
+.availability {
+  background-color: #364f6b;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 30%;
+  overflow: hidden;
+  margin-top: 20px;
+  /* position: absolute; */
+  /* left: 70% */
+}
+
+.availability h1 {
+  margin: 20px;
+  text-align: center;
+  color: white;
+}
+
+.availability pre {
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
+
+.thirdRow {
+  display: flex;
+  margin: 0 auto;
+  min-height: 50px;
+}
+
+.about {
+  background-color: #364f6b;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+  /* position: absolute; */
+}
+
+.about h1 {
+  margin: 20px;
+  text-align: center;
+  color: white;
+}
+
+.about pre {
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
+.fourthRow {
+  display: flex;
+  margin: 0 auto;
+  min-height: 300px;
+}
+
+.featuredReview {
+  background-color: #364f6b;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+  /* position: absolute; */
+}
+
+.featuredReview h1 {
+  margin: 20px;
+  text-align: center;
+  color: white;
+}
+
+.featuredReview pre {
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
+.featuredReview table {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  border-color: white;
+}
+
+.featuredReview table tr:first-child {
+  font-weight: bold;
+}
+
+.featuredReview table td:first-child {
+  width: 20%;
+}
+
+.fifthRow {
+  display: flex;
+  margin: 0 auto;
+  min-height: 300px;
+  margin-bottom: 20px;
+}
+
+.reviews {
+  background-color: #364f6b;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+  /* position: absolute; */
+}
+
+.reviews h1 {
+  margin: 20px;
+  text-align: center;
+  color: white;
+}
+
+.reviews pre {
+  color: white;
+  margin: 20px;
+  font-size: 16px;
+  white-space: pre-wrap;
+}
+
+.reviews table {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  border-color: white;
+}
+
+.reviews table tr:first-child {
+  font-weight: bold;
+}
+
+.reviews table td:first-child {
+  width: 20%;
+}

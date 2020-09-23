@@ -1,0 +1,83 @@
+body{
+    background: rgba(77, 129, 95, 0.253);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+body h1{
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    z-index: -1;
+}
+
+.left{
+    position: absolute; 
+    left : 10px;
+    top : 60px;
+    width: 200px;
+    height: 623px;
+    background-color: rgba(137, 190, 139, 0.425);
+}
+
+.right{
+    display: block;
+    position: absolute; 
+    left : 220px;
+    top : 60px;
+    width: 1300px;
+    height: 623px;
+    background-color: rgba(137, 190, 139, 0.425);
+}
+
+.addAdminForm{
+    position: absolute; 
+    left : 30px;
+    top : 30px;
+}
+
+
+    nav a{
+        display: block;
+        background-color: #85c08a66;
+        width: 150px;
+        height: 30px;
+        text-align: center;
+        padding-top: 7px;
+        padding-bottom: 9px;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-radius: 5px;	
+        margin-left: 15px;
+        margin-top: 15px;
+        text-decoration: none;
+        color: black;
+    }
+    nav a:hover{
+        background-color: rgb(122, 175, 138);
+        color: white;
+    }
+
+    .showCoaches{
+        position: absolute; 
+        left : 30px;
+        top : 30px;
+    }
+    
+    .showStudents{
+        position: absolute; 
+        left : 30px;
+        top : 30px;
+    }
+
+    .showAdmins{
+        position: absolute; 
+        left : 30px;
+        top : 30px;
+    }
+
+    .coachApproval{
+        position: absolute; 
+        left : 30px;
+        top : 30px;
+    }

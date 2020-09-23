@@ -4,12 +4,33 @@ const name = document.getElementById('name');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
-
+const rememberMe = document.getElementById('rememberMe');
 
 
 function submits() {
   if (usernameCheck() && passwordCheck()) {
-    alert('Login successful');
+    var userData = {
+      'rememberMe' : rememberMe.checked,
+      'username' : usernameCheck(),
+      'password' : passwordCheck()
+    };
+
+    userData = JSON.stringify(userData);
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.open('POST', '../controllers/loginController.php', true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.responseType = "json";
+    xhttp.send('json='+userData);
+
+    xhttp.onreadystatechange = function(){
+      if(this.readyState == 4 && this.status == 200){
+        // alert(this.response.status);
+        if (this.response.status == "success") {
+          location.replace("../views/indexUser.php");
+        }
+      }
+    }
   }
   else {
     alert('Login failed');
@@ -26,7 +47,7 @@ function usernameCheck() {
   } else {
     // add success class
     setSuccessFor(username);
-    return true;
+    return usernameValue;
   }
 }
 
@@ -43,7 +64,7 @@ function passwordCheck() {
   }
   else {
     setSuccessFor(password);
-    return true;
+    return passwordValue;
   }
 
 }
