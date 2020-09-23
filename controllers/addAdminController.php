@@ -8,10 +8,31 @@
     $email = $_POST["email"];
     $password = $_POST["password"];
     $confirmPassword = $_POST["confirmPassword"];
+    $question = $_POST["question"];
+    $answer = $_POST["answer"];
+
+    function isPasswordMached($password, $confirmPassword){
+        if($password !== $confirmPassword){
+          return false;
+        }else{
+          return true;
+        }
+    }
+
+    function  isSecurityQuestionAnswerSet($question, $answer)
+        {
+            if(empty($question) || empty($answer)){
+                return false;
+            }else{
+                return true;
+            }
+        }
+
 
     $statusUserName = isUsernameUnique($username);
     $status = isEmailUnique($email);
     $statusPassword = isPasswordMached($password, $confirmPassword);
+    $statusQuestionAnswer = isSecurityQuestionAnswerSet($question, $answer);
 
     if(empty($username) || empty($name) || empty($email) || empty($password) ||empty($confirmPassword)){
         echo "Empty Fields Found";
@@ -25,9 +46,12 @@
     else if($statusPassword == false){
         echo "Password not mached";
     }
+    else if( $statusQuestionAnswer == false){
+        echo "Please Enter security question and answer";
+    }
     else{
         $userType = "Admin";
-        createUser($username,$name,$email,$password,$userType); 
+        createAdmin($username,$name,$email,$password,$userType,$question,$answer); 
     }
 
 

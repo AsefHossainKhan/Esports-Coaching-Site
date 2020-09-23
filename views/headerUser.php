@@ -22,6 +22,10 @@
         else if ($_SESSION['userType'] == "Student") {
           echo "studentProfile.php";
         }
+        else if ($_SESSION['userType'] == "Admin") {
+          echo "adminHomePage.php";
+        }
+        
         ?>
         >Profile Information</a></li>
     		<li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
