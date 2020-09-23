@@ -10,7 +10,7 @@ require_once '../sessionCookieCheck/sessionCookie.php';
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
   <link rel="stylesheet" href="../assets/css/coachPackages.css">
-  <title>Document</title>
+  <title>Coach Reviews</title>
 </head>
 <body onload="currentReviews()">
   

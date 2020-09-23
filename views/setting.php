@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Setting</title>
 
 	<style type="text/css">
 		h2{

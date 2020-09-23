@@ -27,7 +27,7 @@
         }
         
         ?>
-        >Profile Information</a></li>
+        ><?= $_SESSION['username'] ?>'s Profile</a></li>
     		<li> <a href="../sessionCookieCheck/logout.php">Log out</a></li>
       </ul>
     </nav>

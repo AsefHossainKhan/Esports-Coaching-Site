@@ -10,7 +10,7 @@ require_once '../sessionCookieCheck/sessionCookie.php';
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
   <link rel="stylesheet" href="../assets/css/coachResetPassword.css">
-  <title>Document</title>
+  <title>Coach Reset Password</title>
 </head>
 <body>
   

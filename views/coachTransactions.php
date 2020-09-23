@@ -10,7 +10,7 @@ require_once '../sessionCookieCheck/sessionCookie.php';
   <link rel="stylesheet" href="../assets/css/header.css">
   <link rel="stylesheet" href="../assets/css/footer.css">
   <link rel="stylesheet" href="../assets/css/coachTransactions.css">
-  <title>Document</title>
+  <title>Coach Transactions</title>
 </head>
 <body onload="loadData();loadWallet()">
   
