@@ -4,7 +4,7 @@
   { 
       session_start(); 
   } 
-$id=$_SESSION['UserId'];
+$id=$_SESSION['userId'];
 //$id=12;
 include_once '../controllers/studentProfileData.php';
 require_once '../sessionCookieCheck/sessionCookie.php';
@@ -38,7 +38,7 @@ if (isset($_GET['Update'])) {
 <body>
 	
     <?php
-	include 'header.php';
+	include 'headerUser.php';
 	?>
 
 	<section class="profile">
@@ -67,7 +67,7 @@ if (isset($_GET['Update'])) {
 
                     <li> <p onclick="setting()">Settings</p></li>
                     <li> <p onclick="">My Reviews</p></li>
-                    <li> <p onclick="">Achievemrnts</p></li>
+                    <li> <p onclick="">Achievements</p></li>
                     <li> <p onclick="learningMethods()">Learning Methods</p></li>
                     <!--li> <p onclick="">Profile Information</p></li--> 
                  </ul>
