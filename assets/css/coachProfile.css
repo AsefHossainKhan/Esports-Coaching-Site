@@ -12,47 +12,75 @@ body {
 }
 
 .container{
-  position: relative;
   width:80%;
   margin:auto;
   overflow:hidden;
 }
 
 .firstRow {
-  position: relative;
+  display: flex;
+  margin: 0 auto;
   min-height: 350px;
+
 }
 
 .profile-name {
   background-color: #364f6b;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  width: 60%;
+  /* width: 60%; */
+  width: 1000px;
   overflow: hidden;
   margin-top: 20px;
-  position: absolute;
-  right: 40%;
+  /* position: absolute; */
+  /* right: 40%; */
   color: white;
+  margin-right: 100px;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+#justprofileandname div h3:first-child {
+  padding-bottom: 25px;
+  border-bottom: 2px solid white;
+}
+
+#profileFullName {
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+
+}
+
+/* .profile-name div h3 {
+  display: block;
+  width: 400px;
+} */
+
+#justprofileandname {
+  display: flex;
+  width: 400px;
 }
 
 #profileAvatar {
-  position: relative;
+  /* position: relative; */
   margin: 20px;
   border-radius: 100px;
   /* display: absolute; */
   width: 200px;
   height: 200px;
 }
+
 /* #profileAvatar img{
   width: 100px;
   height: 100px;
 } */
 
 #profileName {
-  display: inline-block;
-  position: absolute;
+  display: flex;
+  /* position: absolute;
   right: 150px;
-  top: 60px;
+  top: 60px; */
 }
 
 .myButton {
@@ -66,6 +94,8 @@ body {
   font-weight: bold;
   padding: 10px;
   width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 .packages {
@@ -75,10 +105,11 @@ body {
   width: 30%;
   overflow: hidden;
   margin-top: 20px;
-  position: absolute;
-  left: 70%;
+  /* position: absolute; */
+  /* left: 70%; */
   color: white;
   text-align: center;
+  position: relative;
 }
 
 .packages table {
@@ -109,7 +140,8 @@ body {
 }
 
 .secondRow {
-  position: relative;
+  display: flex;
+  margin: 0 auto;
   min-height: 400px;
 }
 
@@ -117,11 +149,13 @@ body {
   background-color: #364f6b;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  width: 60%;
+  width: 1000px;
   overflow: hidden;
   margin-top: 20px;
-  position: absolute;
-  right: 40%;
+  /* position: absolute; */
+  /* right: 40%; */
+  margin-right: 100px;
+
 }
 
 .achievements h1 {
@@ -144,8 +178,8 @@ body {
   width: 30%;
   overflow: hidden;
   margin-top: 20px;
-  position: absolute;
-  left: 70%
+  /* position: absolute; */
+  /* left: 70% */
 }
 
 .availability h1 {
@@ -163,8 +197,9 @@ body {
 
 
 .thirdRow {
-  position: relative;
-  min-height: 1000px;
+  display: flex;
+  margin: 0 auto;
+  min-height: 50px;
 }
 
 .about {
@@ -174,7 +209,7 @@ body {
   width: 100%;
   overflow: hidden;
   margin-top: 20px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .about h1 {
@@ -191,7 +226,8 @@ body {
 }
 
 .fourthRow {
-  position: relative;
+  display: flex;
+  margin: 0 auto;
   min-height: 300px;
 }
 
@@ -202,7 +238,7 @@ body {
   width: 100%;
   overflow: hidden;
   margin-top: 20px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .featuredReview h1 {
@@ -234,8 +270,10 @@ body {
 }
 
 .fifthRow {
-  position: relative;
+  display: flex;
+  margin: 0 auto;
   min-height: 300px;
+  margin-bottom: 20px;
 }
 
 .reviews {
@@ -245,7 +283,7 @@ body {
   width: 100%;
   overflow: hidden;
   margin-top: 20px;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .reviews h1 {

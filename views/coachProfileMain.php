@@ -37,9 +37,13 @@ require_once ("../sessionCookieCheck/coachProfileCheck.php");
     <input type="hidden" name="" id="userId" value="<?= $_SESSION["userId"];?>">
     <div class="firstRow">
       <div class="profile-name">
-        <img src="" alt="profile-avatar" id="profileAvatar">
-        <h3 id="profileName">Gamer Name <br><hr> Full Name </h3>
-        <br>
+        <div id="justprofileandname">
+          <img src="" alt="profile-avatar" id="profileAvatar">
+          <div>
+            <h3 id="profileGameName">Gamer Name</h3>
+            <h3 id="profileFullName">Full Name </h3>
+          </div>
+        </div>
         <a href="coachProfilePicture.php" style="text-decoration: none;"><button class="myButton">Change Profile Picture</button></a>
       </div>
       

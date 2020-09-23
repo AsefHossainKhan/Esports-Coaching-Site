@@ -118,16 +118,22 @@ function primaryRoleCheck() {
 
 function achievementsCheck() {
   var achievementsValue = achievements.value.trim();
+  var check = /\'/g;
+  achievementsValue = achievementsValue.replace(check,"\'\'");
   return achievementsValue;
 }
 
 function timetableCheck() {
   var timetableValue = timetable.value.trim();
+  var check = /\'/g;
+  timetableValue = timetableValue.replace(check,"\'\'");
   return timetableValue;
 }
 
 function aboutMeCheck() {
   var aboutMeValue = aboutMe.value.trim();
+  var check = /\'/g;
+  aboutMeValue = aboutMeValue.replace(check,"\'\'");
   return aboutMeValue;
 }
 

@@ -1,0 +1,130 @@
+Folder PATH listing
+Volume serial number is 36AD-4433
+D:.
+³   README.md
+³   tree.txt
+³   
+ÃÄÄÄassets
+³   ÃÄÄÄcss
+³   ³       adminHomePage.css
+³   ³       coachEditProfile.css
+³   ³       coachForgotPassword.css
+³   ³       coachPackages.css
+³   ³       coachProfile.css
+³   ³       coachProfilePicture.css
+³   ³       coachProfileV2.css
+³   ³       coachResetPassword.css
+³   ³       coachTransactions.css
+³   ³       footer.css
+³   ³       forgotPassword.css
+³   ³       forgotPasswordInitial.css
+³   ³       header.css
+³   ³       homePage.css
+³   ³       index.css
+³   ³       loginPage.css
+³   ³       registration.css
+³   ³       studentProfile.css
+³   ³       webService.css
+³   ³       
+³   ÀÄÄÄjs
+³           addAdmin.js
+³           coachEditProfile.js
+³           coachFirstProfile.js
+³           coachPackages.js
+³           coachProfile.js
+³           coachProfilePicture.js
+³           coachResetPassword.js
+³           coachReviews.js
+³           coachScript.js
+³           coachTransactions.js
+³           forgotPassword.js
+³           forgotPasswordInitial.js
+³           login.js
+³           masterCoach.js
+³           registration.js
+³           script.js
+³           validation_script.js
+³           
+ÃÄÄÄcontrollers
+³       addAdminController.php
+³       allCoach.php
+³       CoachData.php
+³       coachEditProfileController.php
+³       coachFirstProfileController.php
+³       coachForgotPasswordController.php
+³       coachForgotPasswordInitialController.php
+³       coachPackageController.php
+³       coachProfile.php
+³       coachProfileController.php
+³       coachProfileData.php
+³       coachProfilePictureController.php
+³       coachResetPasswordController.php
+³       coachReviewsController.php
+³       coachTransactionsController.php
+³       DiscordData.php
+³       loginController.php
+³       registrationController.php
+³       studentProfileData.php
+³       
+ÃÄÄÄdb
+³       db.php
+³       
+ÃÄÄÄres
+³       17.jpeg
+³       9.jpeg
+³       9.png
+³       96706608_10158328232333147_2664311283364397056_o.jpg
+³       controller.jpg
+³       default.jpg
+³       discord.png
+³       discord_50px.png
+³       facebook_50px.png
+³       gmail_50px.png
+³       instagram_50px.png
+³       man-avatar1.jpg
+³       man-avatar2.jpg
+³       twitch_50px.png
+³       woman-avatar.jpg
+³       
+ÃÄÄÄservices
+³       adminServices.php
+³       coachServices.php
+³       DBService.php
+³       studentServices.php
+³       userServices.php
+³       
+ÃÄÄÄsessionCookieCheck
+³       coachProfileCheck.php
+³       logout.php
+³       sessionCookie.php
+³       
+ÀÄÄÄviews
+        adminHomePage.html
+        coachEditProfile.php
+        coachFirstProfile.php
+        coachPackages.php
+        coachProfile.php
+        coachProfileMain.php
+        coachProfilePicture.php
+        coachResetPassword.php
+        coachReviews.php
+        coachTransactions.php
+        controller.jpg
+        editProfile.html
+        findMaster.php
+        footer.php
+        forgotPassword.php
+        forgotPasswordInitial.php
+        header.php
+        headerUser.php
+        index.php
+        indexUser.php
+        learningMethods.php
+        login.php
+        profile.html
+        registration.php
+        setting.php
+        studentProfile.php
+        test.php
+        webService.php
+        
