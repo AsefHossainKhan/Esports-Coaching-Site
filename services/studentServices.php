@@ -12,6 +12,8 @@
       $userId = $row['userId'];
       $sql3 = "INSERT INTO login VALUES ('','$userId','$password','','')";
       mysqli_query($connection, $sql3);
+      $sql4 = "INSERT INTO students(userId, phone, IGN, discord, steam, wallet, profilePicture) VALUES ($userId,0,'0','0','0','0','../res/default.jpg')";
+      mysqli_query($connection, $sql4);
       return "success";
     } catch (Exception $e) {
       return $e;

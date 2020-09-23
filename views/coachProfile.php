@@ -1,5 +1,10 @@
 <?php
+  if(!isset($_SESSION)) 
+  { 
+      session_start(); 
+  } 
 include_once '../controllers/coachProfileData.php';
+require_once '../sessionCookieCheck/sessionCookie.php';
 ?>
 
 

@@ -1,7 +1,13 @@
 <?php
-//$id=$_SESSION['id'];
-$id=12;
+
+  if(!isset($_SESSION)) 
+  { 
+      session_start(); 
+  } 
+$id=$_SESSION['UserId'];
+//$id=12;
 include_once '../controllers/studentProfileData.php';
+require_once '../sessionCookieCheck/sessionCookie.php';
 
 
 $sqldiscord = "SELECT discord from students WHERE userId=".$id;
