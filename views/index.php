@@ -1,7 +1,7 @@
 
 <?php
 include_once '../controllers/CoachData.php';
-require_once '../sessionCookieCheck/sessionCookie.php';
+//require_once '../sessionCookieCheck/sessionCookie.php';
 ?>
 
 

@@ -1,13 +1,7 @@
 <?php
-
-  if(!isset($_SESSION)) 
-  { 
-      session_start(); 
-  } 
-$id=$_SESSION['userId'];
-//$id=12;
+//$id=$_SESSION['id'];
+$id=12;
 include_once '../controllers/studentProfileData.php';
-require_once '../sessionCookieCheck/sessionCookie.php';
 
 
 $sqldiscord = "SELECT discord from students WHERE userId=".$id;
@@ -67,7 +61,7 @@ if (isset($_GET['Update'])) {
 
                     <li> <p onclick="setting()">Settings</p></li>
                     <li> <p onclick="">My Reviews</p></li>
-                    <li> <p onclick="">Achievements</p></li>
+                    <li> <p onclick="">Achievemrnts</p></li>
                     <li> <p onclick="learningMethods()">Learning Methods</p></li>
                     <!--li> <p onclick="">Profile Information</p></li--> 
                  </ul>
@@ -77,7 +71,7 @@ if (isset($_GET['Update'])) {
 
 	<div id = "student-info">
 		
-		<form name="studentForm" action="#" method="GET" onsubmit="return validateStudentForm()">
+		<form name="studentForm" action="#" method="post" onsubmit="return validateStudentForm()" enctype="multipart/form-data">
 
 			<h4>Profile Information</h4>
 
@@ -99,6 +93,10 @@ if (isset($_GET['Update'])) {
 		   <label for="studentsteam">steam</label><br>
 		   <input type="text" name="studentsteam" id="studentsteam" value="<?php echo $students[0]['steam'];?>" >
 		   <br>
+		   <label for="image">Profile Picture</label><br>
+		   <input type="file" name="image"  value="<?php echo $students[0]['profilePicture'];?>" >
+		   <br>
+
 
 		   <button type="submit" id="btn" name="UpdateProfile" value="Update">Update</button>
 
